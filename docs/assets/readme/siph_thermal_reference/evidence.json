@@ -1,0 +1,148 @@
+{
+  "artifacts": {
+    "cells.csv": "b74180d2e0fcdff13e890c8742097b37cdb443b8720ef821d8521beff0e0ff8e",
+    "figure.png": "97896ba2b5eed7a0f4addf1e3f9fd6b6ee3d1c7939836d7eb4f7035fdc3e24c2",
+    "figure.svg": "f2b954aa7b1433b4f1604b85955a60f7e0d70037f4a6456ec298f8c3700f5207",
+    "nodes.csv": "5876f21b266797824c042e4ab6b21cf801ea84a0a6738692566b1a9f1141607a"
+  },
+  "data_columns": {
+    "cells.csv": {
+      "cell_id": "zero-based canonical triangle id",
+      "centroid_y_um,centroid_z_um": "triangle centroid in micrometres",
+      "heat_flux_y_W_per_m2,heat_flux_z_W_per_m2": "JAX P1 cell heat-flux vector in watts per square metre",
+      "node_0,node_1,node_2": "counter-clockwise canonical node ids",
+      "region_id,region_name": "piecewise-constant material tag"
+    },
+    "nodes.csv": {
+      "elmer_minus_jax_K": "signed nodal temperature difference in kelvin",
+      "elmer_temperature_K": "Elmer nodal temperature in kelvin",
+      "jax_temperature_K": "JAX nodal temperature in kelvin",
+      "node_id": "zero-based canonical FEM node id",
+      "y_um": "horizontal coordinate in micrometres",
+      "z_um": "vertical coordinate in micrometres"
+    }
+  },
+  "figure": {
+    "coordinate_axes": "horizontal y, vertical z",
+    "coordinate_unit": "um",
+    "difference_scale": "linear, symmetric about zero, no clipping",
+    "font": "7 pt sans serif at final 7.2 x 4.75 inch size",
+    "heat_flux_overlay": "not displayed so the JAX and Elmer temperature panels use identical encodings; cell heat flux remains available in cells.csv",
+    "line_width_pt": 0.75,
+    "preview_dpi": 300,
+    "spatial_aspect": "vertical axis enlarged for readability and explicitly labelled",
+    "svg_rendering": "axes and text remain vector; dense spatial fields are embedded at 300 dpi",
+    "temperature_scale": "linear, full data range, no clipping",
+    "temperature_unit": "K"
+  },
+  "figure_id": "siph-thermal-reference-e0309c1f9a535d6e",
+  "generation_command": "uv run --with matplotlib==3.11.0 python examples/readme_siph_thermal_reference.py --allow-external --elmer-executable /path/to/ElmerSolver",
+  "metrics": {
+    "adjoint_vs_elmer_fd_relative_error": 2.828947591790569e-12,
+    "ambient_temperature_K": 300.0,
+    "current_A": 0.015,
+    "elmer_central_fd_ring_temperature_gradient_K_per_A": 4425.389359009084,
+    "elmer_fd_current_step_A": 1.5e-06,
+    "input_line_power_W_per_m": 349.3788819875774,
+    "jax_adjoint_backward_error": 4.6513544708794505e-18,
+    "jax_adjoint_ring_temperature_gradient_K_per_A": 4425.389358996565,
+    "jax_discrete_energy_balance_relative_error": 1.7760167894367555e-12,
+    "jax_relative_residual": 2.867909026758789e-18,
+    "jax_reverse_vs_explicit_adjoint_relative_error": 1.9692206520054393e-13,
+    "maximum_absolute_temperature_difference_K": 3.5083758120890707e-10,
+    "maximum_temperature_rise_K": 164.35810376058305,
+    "node_count": 3240.0,
+    "relative_l2_temperature_rise_difference": 2.9107128811475302e-12,
+    "ring_mean_temperature_rise_elmer_K": 33.19042019263338,
+    "ring_mean_temperature_rise_jax_K": 33.190420192356044,
+    "rms_temperature_difference_K": 2.147849920037727e-10,
+    "triangle_count": 6369.0,
+    "volumetric_heat_source_W_per_m3": 1247781721384205.5
+  },
+  "provenance": {
+    "elmer": {
+      "convergence": "converged",
+      "executable_sha256": "b7ee6c620174d4bfbbf5d2243c357a52716c451f9e2e89baf0a0c75dab565101",
+      "heat_solve_sha256": "1e0ffa730888b537479ce5eec416a457668bab4b19d040df84f389b3043b2fdb",
+      "input_sif_sha256": "2b78e24681d9e25ac7eb23754c4bb7f8ce40d6e5acfe75255256e1793d8c5675",
+      "raw_vtu_sha256": "5472f91423c65fe4d3c2784a6a94283b280ff84651734d2d4d03b3cd6459e63c",
+      "result_sha256": "167b79c0733743e97ff6e0a446d2793408ab2806d13b7940888b2aefdb63f117",
+      "revision": "4f2d7e4b9",
+      "source_commit": "4f2d7e4b99f8f0dcf2f7ac579e056969373bf594",
+      "source_digest": "5c4b0e9f6e29ad646e3d378f14a8b882cbfe647fdf8452451b60459d070622bf",
+      "source_worktree_state": "not_checked",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c39033bad4ffc98998b1e78978b7fa0d6f9b67fe622cdc23d6808ada2242ee6e",
+      "version": "26.2-devel"
+    },
+    "femx": {
+      "commit": "3cdff9bd18288f8df8fc50ada564f0a032f5469a",
+      "generator_sha256": "312129721842bdc19242d9197d429de8ca159b1aa1de9b9d703678a917587992",
+      "matplotlib_version": "3.11.0",
+      "numpy_version": "2.4.6",
+      "python_version": "3.13.13",
+      "uv_lock_sha256": "5053b60fab40d256d9760c3d33fb0ea7e23adeda5aeb2e90ab6fc0054354a296",
+      "uv_lock_source": "HEAD:uv.lock"
+    },
+    "gmsh": {
+      "canonical_mesh_sha256": "562e43984a8cb497baa0d3d684d0d819515b51391c2486f55ce91a04c11e77cb",
+      "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+      "geometry_sha256": "c7056367d50332332cb7fb95c3b889d612e17a60ba35e655ccc2e9c508500b03",
+      "import_record_sha256": "ff6301499b557d147ec8fd5c33590724f2cb96d74358a6db6e266812964bc39b",
+      "mesh_sha256": "ad7e4963313320026a902f8502fffc4aa2f8e6f367c12f917feed05ed4861d51",
+      "process_succeeded": true,
+      "version": "4.12.1"
+    },
+    "jax": {
+      "backend": "cpu",
+      "backend_name": "jax-steady-heat",
+      "backend_version": "0.2.0+jax-0.10.1",
+      "convergence": "converged",
+      "device_kind": "cpu",
+      "float64": true,
+      "version": "0.10.1"
+    },
+    "model": {
+      "boundary_conditions": {
+        "bottom_sink": "T = 300 K",
+        "remaining_external_boundary": "adiabatic"
+      },
+      "coordinate_unit": "m in solver data; um in figure axes",
+      "dimension": 2,
+      "full_3d_claimed": false,
+      "material_status": "public tutorial parameters; not foundry-calibrated thin-film properties",
+      "measured_device_prediction_claimed": false,
+      "out_of_plane_convention": "per_unit_depth",
+      "slice": "x=0 vertical y-z solid section"
+    },
+    "raw_run_artifacts": {
+      "relative_root": ".femx/readme-thermal-reference/",
+      "retained_outside_git": true,
+      "run_id": "c7056367d503-attempt-010"
+    },
+    "run_identity": {
+      "elmer_run_id": "c7056367d503-attempt-010/elmer-baseline",
+      "jax_run_id": "jax-148b85122a2d1b40",
+      "problem_digest": "148b85122a2d1b4084566bb275af3f65ef345cc77dfc70462ba1768581caa274"
+    },
+    "source": {
+      "design_page": "https://www.flexcompute.com/tidy3d/examples/notebooks/ThermallyTunedRingResonator/",
+      "notebook_repository": "https://github.com/flexcompute/tidy3d-notebooks",
+      "use": "independent reconstruction of published dimensions and tutorial parameters"
+    }
+  },
+  "schema_version": "femx.figure.siph-thermal-reference/v1",
+  "status": {
+    "elmer_convergence": "converged",
+    "gmsh_process": "succeeded",
+    "jax_convergence": "converged",
+    "scientific_parity": "passed"
+  },
+  "thresholds": {
+    "adjoint_vs_elmer_fd_relative_error": 5e-05,
+    "jax_discrete_energy_balance_relative_error": 1e-10,
+    "jax_relative_residual": 1e-10,
+    "maximum_absolute_temperature_difference_K": 1e-07,
+    "relative_l2_temperature_rise_difference": 1e-10
+  }
+}

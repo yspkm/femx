@@ -1,0 +1,1738 @@
+{
+  "artifacts": {
+    "README.md": "fedbe3a788450ab2e2d335307f225816888158a23b18cb8e0e3b23f5c4907353",
+    "figure.png": "8715333d7f5821837d39082b7efed57d8f1517ae17d7702d8d1dd73b0de85884",
+    "figure.svg": "5058f6302c98e4898d93042421933e359050e55939d670d63f8f44fd0ac3a648",
+    "summary.csv": "2d2b75e60a7ec51390abde5cca4c1f7930caf52622d4611578dda2488e62f651"
+  },
+  "claim_scope": "bounded constant-property CPU sensitivity; not domain convergence, package calibration, Elmer parity, TPU evidence, or fabricated-device agreement",
+  "figure": {
+    "clipping": "none; plotted limits include every retained value",
+    "figure_id": "ring-heater-thermal-sensitivity-cb9cafed8f1e2328",
+    "heatmap_colormap": "inferno",
+    "non_color_encoding": "every heatmap cell and comparison point has an exact value label",
+    "peak_K_per_mW": [
+      [
+        15.908548435198913,
+        15.481864953697476,
+        15.537397662314216
+      ],
+      [
+        16.000417610673868,
+        15.514580637801402,
+        15.605012544624485
+      ],
+      [
+        16.738776219018582,
+        15.736654996249502,
+        15.683545227195372
+      ]
+    ],
+    "physical_size_inches": [
+      7.2,
+      3.0
+    ],
+    "png_dpi": 300,
+    "png_pixels": [
+      2160,
+      900
+    ],
+    "question": "How do bounded lateral extent, modeled silicon depth, and an ideal side sink change the coarse model's thermal resistance?",
+    "relative_comparisons_percent": {
+      "Deepen only\nW20: D0.5\u219250": [
+        5.218752592051246,
+        14.9027923511301,
+        5.657805014538897
+      ],
+      "Ideal side sink\nvs W40, D5": [
+        -0.013590116913353434,
+        -0.02673883176358416,
+        -0.014648247996240649
+      ],
+      "Widen + deepen\nW80, D50": [
+        -1.4143541060333553,
+        -3.2347485585807467,
+        -1.6997507095530828
+      ]
+    },
+    "ring_mean_K_per_mW": [
+      [
+        5.726992263817455,
+        5.384797446789779,
+        5.389999709716958
+      ],
+      [
+        5.819287006337677,
+        5.442840859549976,
+        5.450492458776495
+      ],
+      [
+        6.580474028859456,
+        5.655601053710036,
+        5.541738464113589
+      ]
+    ],
+    "source_envelope_outline": "cyan border at W20 um and D0.5 um",
+    "substrate_depths_um": [
+      0.5,
+      5.0,
+      50.0
+    ],
+    "takeaway": "Within this 3 by 3 envelope, deeper silicon does not monotonically reduce thermal resistance; width and depth interact, and the ideal side-sink bound is negligible at W40 um and D5 um.",
+    "widths_um": [
+      20.0,
+      40.0,
+      80.0
+    ]
+  },
+  "figure_id": "ring-heater-thermal-sensitivity-cb9cafed8f1e2328",
+  "generator_sha256": "6012943222822c60ab0e2f2d2e7ce1c1b121cc784eb71598d28bb309aaa11374",
+  "schema_version": "femx.figure.ring-heater-thermal-sensitivity/v1",
+  "source_evidence": {
+    "cases": [
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 2e-05,
+            "domain_y": 2e-05,
+            "substrate_thickness": 5e-07
+          },
+          "name": "source_envelope",
+          "recipe_sha256": "cb14ee2fe5b2c816185b5daca44c8641719279042d26c480cc40bd8d66fbb4ca",
+          "reference_case": null,
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "baseline"
+        },
+        "case_sha256": "ac1eecf64e20f88036c9d705a4a345d5594389b572840e7865182d3d353c0d48",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.021779593813074663,
+            "predicted_joule_power_W": 0.0011478634640556093,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.22957269281112186,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.021779593813074663
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "21bc4cd7f3ecd4fc2bb049f3fb190e78e24f5408a6c82f748eabdbc9e94a9acb",
+          "mesh_report_sha256": "b0a13d0e445709dca98445939f58bb71a7666912b4e4cc8ba45ddf4633d9d4d4",
+          "recipe_sha256": "cb14ee2fe5b2c816185b5daca44c8641719279042d26c480cc40bd8d66fbb4ca",
+          "source_msh_sha256": "7b4d3f38108d2922b728dfafb19064a737596e02f63e16ff062b96eff3642162"
+        },
+        "gmsh": {
+          "elapsed_seconds": 1.3226800250122324,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.9649156452792e-06,
+          "minimum_mean_ratio": 0.13748479564981902,
+          "node_count": 12761,
+          "tetrahedron_count": 71808
+        },
+        "numerics": {
+          "charge_balance_relative_error": 2.078524923298192e-09,
+          "current_backward_error": 1.3209331490548182e-12,
+          "dirichlet_outward_power_W": 0.0011478284775009449,
+          "electrical_energy_relative_error": 4.005791243905387e-13,
+          "electrical_joule_power_W": 0.0011478634640556093,
+          "joule_transfer_relative_error": 1.8890786342389924e-16,
+          "robin_outward_power_W": 3.498655469657496e-08,
+          "target_current_iterations": 377,
+          "target_thermal_iterations": 545,
+          "thermal_backward_error": 7.321263898629675e-15,
+          "thermal_balance_relative_error": 1.4168089756792245e-14,
+          "unit_current_iterations": 377,
+          "unit_thermal_iterations": 545
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 138,
+            "al_contact_positive": 138,
+            "tin_heater": 6555
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "d07fa33644c5846e0c08f89e0978dcec82e88fa8941547b7f6c2f850f796484d",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "b0a13d0e445709dca98445939f58bb71a7666912b4e4cc8ba45ddf4633d9d4d4",
+          "node_count": 12761,
+          "recipe_sha256": "cb14ee2fe5b2c816185b5daca44c8641719279042d26c480cc40bd8d66fbb4ca",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "920c6488d1dd95142279e732c45c4759633151d85d3947e6be7894b5ab27cddf",
+          "tetrahedron_count": 71808
+        },
+        "plan_sha256": "118ffc4cd979ec413eea14f8b449d54341bbe2f6e940f377f26f4238a7518713",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.770118207381564,
+          "heater_mean_rise_K": 16.95407905003583,
+          "maximum_temperature_K": 318.26084151492387,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 15.908548435198913,
+          "peak_rise_K": 18.260841514923868,
+          "ring_mean_K_per_mW": 5.726992263817455,
+          "ring_mean_rise_K": 6.5738051785651805
+        },
+        "timing": {
+          "target_solve_seconds": 0.502355663018534,
+          "unit_solve_seconds_including_compile": 0.94376798599842
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 2e-05,
+            "domain_y": 2e-05,
+            "substrate_thickness": 5e-06
+          },
+          "name": "substrate_5um",
+          "recipe_sha256": "3ff028b140e5f38991ae02f2cec9d435c4e79a17233b301d5d7bbcf376966263",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "substrate_depth"
+        },
+        "case_sha256": "55a6b970b29cb5f28bab24effbc1d502ff492019c6723651f588776ec9fb49a3",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.021779314297553795,
+            "predicted_joule_power_W": 0.001147878195724828,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.2295756391449656,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.021779314297553795
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "fda26177880809b538a346ee317eef41cbf1461f709c614d6adc80925c41f100",
+          "mesh_report_sha256": "60dbe4d4a3013eeb9d88c1ea84b356d92290b5f305ac2210d4e2500dd140a73c",
+          "recipe_sha256": "3ff028b140e5f38991ae02f2cec9d435c4e79a17233b301d5d7bbcf376966263",
+          "source_msh_sha256": "99efb4c649a8fee656c903a8dd8d0e16ceae2c999b447236fc1fe0c536880a6b"
+        },
+        "gmsh": {
+          "elapsed_seconds": 1.4065500870055985,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.9649156452792e-06,
+          "minimum_mean_ratio": 0.12297764973686975,
+          "node_count": 13291,
+          "tetrahedron_count": 74560
+        },
+        "numerics": {
+          "charge_balance_relative_error": 2.4093684336192483e-09,
+          "current_backward_error": 1.1470470147883838e-12,
+          "dirichlet_outward_power_W": 0.0011478428564792274,
+          "electrical_energy_relative_error": 2.575810668459151e-11,
+          "electrical_joule_power_W": 0.001147878195724828,
+          "joule_transfer_relative_error": 0.0,
+          "robin_outward_power_W": 3.5339246605591085e-08,
+          "target_current_iterations": 378,
+          "target_thermal_iterations": 544,
+          "thermal_backward_error": 7.307635180745402e-15,
+          "thermal_balance_relative_error": 4.377883549129444e-13,
+          "unit_current_iterations": 378,
+          "unit_thermal_iterations": 544
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 141,
+            "al_contact_positive": 142,
+            "tin_heater": 6558
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "0fa7c20e618b7bdae826b9cc491f3915256b6ab93a2cb4f513e29cf3db233f84",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "60dbe4d4a3013eeb9d88c1ea84b356d92290b5f305ac2210d4e2500dd140a73c",
+          "node_count": 13291,
+          "recipe_sha256": "3ff028b140e5f38991ae02f2cec9d435c4e79a17233b301d5d7bbcf376966263",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "3b31b2271cb793676f4d3cf914b0cad2788261b892559ad82aa3111a42916055",
+          "tetrahedron_count": 74560
+        },
+        "plan_sha256": "fba8a87d00d04aa98fb38643b2df6a4f9c4846800e0c0df650da5cccefbea9d3",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.841091220561754,
+          "heater_mean_rise_K": 17.035765012846014,
+          "maximum_temperature_K": 318.3665304977841,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 16.000417610673868,
+          "peak_rise_K": 18.366530497784083,
+          "ring_mean_K_per_mW": 5.819287006337677,
+          "ring_mean_rise_K": 6.679832669239829
+        },
+        "timing": {
+          "target_solve_seconds": 0.533518345997436,
+          "unit_solve_seconds_including_compile": 0.9979218289954588
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 2e-05,
+            "domain_y": 2e-05,
+            "substrate_thickness": 5e-05
+          },
+          "name": "substrate_50um",
+          "recipe_sha256": "66a7b221f3137df8c1949e1a6f5125afed5bfc54881597ab4ab67e4a43721319",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "substrate_depth"
+        },
+        "case_sha256": "f525b4d55075c9b51882c0d56d692a4b7dee5f8a45b0dc6541369b7ab0fd2539",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.02178031552436416,
+            "predicted_joule_power_W": 0.001147825428517516,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.2295650857035032,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.02178031552436416
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "8c311466c30b465b2b4e08cbe45ebe625a02bafe6ee9e28ba2df47892d533252",
+          "mesh_report_sha256": "dd9803892c09abb0900e114bb918885372e49357961fd090492ac9b9aa0596ae",
+          "recipe_sha256": "66a7b221f3137df8c1949e1a6f5125afed5bfc54881597ab4ab67e4a43721319",
+          "source_msh_sha256": "3b6f87ce65f16fc61d62e53079736f599ab257c75c691f7c5b295f0e3e6640d9"
+        },
+        "gmsh": {
+          "elapsed_seconds": 2.0667573460086714,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.9649156452792e-06,
+          "minimum_mean_ratio": 0.11987631066057827,
+          "node_count": 20651,
+          "tetrahedron_count": 111789
+        },
+        "numerics": {
+          "charge_balance_relative_error": 3.110481499661025e-09,
+          "current_backward_error": 1.3858245584257841e-12,
+          "dirichlet_outward_power_W": 0.001147786604045002,
+          "electrical_energy_relative_error": 7.710529941331527e-13,
+          "electrical_joule_power_W": 0.0011478254285175158,
+          "joule_transfer_relative_error": 9.445706163574153e-17,
+          "robin_outward_power_W": 3.8824468303562944e-08,
+          "target_current_iterations": 377,
+          "target_thermal_iterations": 613,
+          "thermal_backward_error": 3.609755892126093e-15,
+          "thermal_balance_relative_error": 1.834167222846193e-12,
+          "unit_current_iterations": 377,
+          "unit_thermal_iterations": 613
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 137,
+            "al_contact_positive": 138,
+            "tin_heater": 6557
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "3ec83a2409906c2a4a86a7893f99eab2febe72881505119646b00179f307ee5a",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "dd9803892c09abb0900e114bb918885372e49357961fd090492ac9b9aa0596ae",
+          "node_count": 20651,
+          "recipe_sha256": "66a7b221f3137df8c1949e1a6f5125afed5bfc54881597ab4ab67e4a43721319",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "575267c5682f40063ade5b53fa407ba4ac61071e13eb79e26966b69f42501bcc",
+          "tetrahedron_count": 111789
+        },
+        "plan_sha256": "5fce4e6a29fca3568ddd7486ceb89970afad8923c69ad7a9deda060f2fa0ebfe",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 15.60578269597212,
+          "heater_mean_rise_K": 17.912714210355432,
+          "maximum_temperature_K": 319.2131929864538,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 16.738776219018582,
+          "peak_rise_K": 19.213192986453805,
+          "ring_mean_K_per_mW": 6.580474028859456,
+          "ring_mean_rise_K": 7.553235422023988
+        },
+        "timing": {
+          "target_solve_seconds": 0.9801986929960549,
+          "unit_solve_seconds_including_compile": 1.4014471549890004
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 4e-05,
+            "domain_y": 4e-05,
+            "substrate_thickness": 5e-07
+          },
+          "name": "domain_40um",
+          "recipe_sha256": "d640dc172171fac178b3c6c91272d6578697730818eb38b83e562698d067e5ff",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "lateral_extent"
+        },
+        "case_sha256": "1280a4231cdcf2ddd445717da3e4905d3f21e8e8ea475d1cd35473fd3e69f61b",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.02177888289563986,
+            "predicted_joule_power_W": 0.001147900933201905,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.229580186640381,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.02177888289563986
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "c181df580bea4c96a8fe4938ffd2d19d24629d6693b67d33038e514c1cd86cba",
+          "mesh_report_sha256": "86beca82bd1c82eafbf5475ef3700012e9298d8d144e3a78bd77d3b2f10a61d4",
+          "recipe_sha256": "d640dc172171fac178b3c6c91272d6578697730818eb38b83e562698d067e5ff",
+          "source_msh_sha256": "c7e6ab490245416975900b8fdc743a2047165d1f6da48ebb35e4f2d5add17184"
+        },
+        "gmsh": {
+          "elapsed_seconds": 1.9786537030013278,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.9649156452792e-06,
+          "minimum_mean_ratio": 0.15238234596649866,
+          "node_count": 21714,
+          "tetrahedron_count": 117019
+        },
+        "numerics": {
+          "charge_balance_relative_error": 6.288197754360635e-10,
+          "current_backward_error": 1.172461355086083e-12,
+          "dirichlet_outward_power_W": 0.0011478659230486988,
+          "electrical_energy_relative_error": 6.861570798127415e-12,
+          "electrical_joule_power_W": 0.001147900933201905,
+          "joule_transfer_relative_error": 9.445084859904051e-17,
+          "robin_outward_power_W": 3.501015120257746e-08,
+          "target_current_iterations": 377,
+          "target_thermal_iterations": 560,
+          "thermal_backward_error": 7.755643643474718e-15,
+          "thermal_balance_relative_error": 8.726313902072969e-13,
+          "unit_current_iterations": 377,
+          "unit_thermal_iterations": 560
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 141,
+            "al_contact_positive": 141,
+            "tin_heater": 6556
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "90799a36410bf03f3fbdfc7b04f77ca84ba013950ad447d6accbab935b34a793",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "86beca82bd1c82eafbf5475ef3700012e9298d8d144e3a78bd77d3b2f10a61d4",
+          "node_count": 21714,
+          "recipe_sha256": "d640dc172171fac178b3c6c91272d6578697730818eb38b83e562698d067e5ff",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "4a3d60fab7c707c9a77a484e68866f5f3558f5c52417173c79d275fdce7ef092",
+          "tetrahedron_count": 117019
+        },
+        "plan_sha256": "181ffe19c748880a3637acc577a5d4b6587ec1ae314e0fb339265725c660c252",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.309835362454054,
+          "heater_mean_rise_K": 16.42627336652663,
+          "maximum_temperature_K": 317.7716472280552,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 15.481864953697476,
+          "peak_rise_K": 17.7716472280552,
+          "ring_mean_K_per_mW": 5.384797446789779,
+          "ring_mean_rise_K": 6.181214014273223
+        },
+        "timing": {
+          "target_solve_seconds": 0.9523861250199843,
+          "unit_solve_seconds_including_compile": 1.3457605690055061
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 8e-05,
+            "domain_y": 8e-05,
+            "substrate_thickness": 5e-07
+          },
+          "name": "domain_80um",
+          "recipe_sha256": "54b41ef1d0e414d50e78051d6805539293601fb06acec251dc7580b86c68b163",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "lateral_extent"
+        },
+        "case_sha256": "8d2dd4dd1e52dec1eb8ea8d3008297cf1659752a565b79861a774c104c9373b9",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.021778933768421063,
+            "predicted_joule_power_W": 0.0011478982518533304,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.22957965037066605,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.021778933768421063
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "1cb088f3088db8e04cc62b700d1ebec43a4734a1a613408b462c6aedb74c5343",
+          "mesh_report_sha256": "0a11d1a8cb91c3e8600b0ec4ff04f187888c8e2cbd6f9255d1a955628260a996",
+          "recipe_sha256": "54b41ef1d0e414d50e78051d6805539293601fb06acec251dc7580b86c68b163",
+          "source_msh_sha256": "d9aaaaa22117cc6520fb75c348d4e37526c26f061e1a6199f0584027bf072319"
+        },
+        "gmsh": {
+          "elapsed_seconds": 4.498720837989822,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.9649156452792e-06,
+          "minimum_mean_ratio": 0.24452045980538747,
+          "node_count": 48318,
+          "tetrahedron_count": 248627
+        },
+        "numerics": {
+          "charge_balance_relative_error": 7.1364161859096934e-09,
+          "current_backward_error": 1.1028713918370648e-12,
+          "dirichlet_outward_power_W": 0.0011478632444843124,
+          "electrical_energy_relative_error": 2.5587739163691044e-12,
+          "electrical_joule_power_W": 0.0011478982518533306,
+          "joule_transfer_relative_error": 0.0,
+          "robin_outward_power_W": 3.500737206494074e-08,
+          "target_current_iterations": 378,
+          "target_thermal_iterations": 580,
+          "thermal_backward_error": 8.00963776038736e-15,
+          "thermal_balance_relative_error": 1.3271319736725328e-12,
+          "unit_current_iterations": 378,
+          "unit_thermal_iterations": 583
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 137,
+            "al_contact_positive": 142,
+            "tin_heater": 6558
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "f1afd44847a6518cf6aefeeed62a6cb2e75d98733ecd181fbbcd39de70361cf9",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "0a11d1a8cb91c3e8600b0ec4ff04f187888c8e2cbd6f9255d1a955628260a996",
+          "node_count": 48318,
+          "recipe_sha256": "54b41ef1d0e414d50e78051d6805539293601fb06acec251dc7580b86c68b163",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "c54b8cc621c5c0c2bd75a71bcc0393ba4873c7f187fbc4e28cc014d49ac82d83",
+          "tetrahedron_count": 248627
+        },
+        "plan_sha256": "eab7016f2695fbfd94cbe576233341ae47676c18bc845bff815c6900f1ef08a7",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.370490241769735,
+          "heater_mean_rise_K": 16.495860626802823,
+          "maximum_temperature_K": 317.8353516149205,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 15.537397662314216,
+          "peak_rise_K": 17.835351614920512,
+          "ring_mean_K_per_mW": 5.389999709716958,
+          "ring_mean_rise_K": 6.1871712442740545
+        },
+        "timing": {
+          "target_solve_seconds": 2.186698931007413,
+          "unit_solve_seconds_including_compile": 2.662232642993331
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 4e-05,
+            "domain_y": 4e-05,
+            "substrate_thickness": 5e-06
+          },
+          "name": "domain_40um_substrate_5um",
+          "recipe_sha256": "1a1057cfb0e437a3eb852fdbe015178bdede39bce82dd51a1a585dab8e1ca4df",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "depth_extent_interaction"
+        },
+        "case_sha256": "d008ec6a6cb355a78ddf0c2a537a42cf50384e2279f23c2be64fdc0157168169",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.02177975331219754,
+            "predicted_joule_power_W": 0.0011478550579358028,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.22957101158716056,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.02177975331219754
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "9a4f845d72b6f4194105a43b509e7d7f4838904bb9f14fc3b7ca4aef3bc5a787",
+          "mesh_report_sha256": "2040e00d3f5884315e6f1a31ce0b308219ee2900582aef225e8429476c6ba5fd",
+          "recipe_sha256": "1a1057cfb0e437a3eb852fdbe015178bdede39bce82dd51a1a585dab8e1ca4df",
+          "source_msh_sha256": "b6f0b3c4b553501ff4d99f1d5e4996951e9b286df376929f0ff8690ca43f3c30"
+        },
+        "gmsh": {
+          "elapsed_seconds": 2.3245614759798627,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.964915645098276e-06,
+          "minimum_mean_ratio": 0.15938799690867736,
+          "node_count": 23681,
+          "tetrahedron_count": 128093
+        },
+        "numerics": {
+          "charge_balance_relative_error": 1.2923245219533866e-09,
+          "current_backward_error": 1.3283863105288137e-12,
+          "dirichlet_outward_power_W": 0.0011478196985711298,
+          "electrical_energy_relative_error": 5.3226691573457516e-11,
+          "electrical_joule_power_W": 0.0011478550579358028,
+          "joule_transfer_relative_error": 9.445462342913172e-17,
+          "robin_outward_power_W": 3.535936555771796e-08,
+          "target_current_iterations": 378,
+          "target_thermal_iterations": 566,
+          "thermal_backward_error": 7.915342320632312e-15,
+          "thermal_balance_relative_error": 3.852804089672798e-13,
+          "unit_current_iterations": 377,
+          "unit_thermal_iterations": 566
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 142,
+            "al_contact_positive": 141,
+            "tin_heater": 6558
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "0cdf0d4626eb636382aef94abe4897142814af809191266a6d61623558f978c7",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "2040e00d3f5884315e6f1a31ce0b308219ee2900582aef225e8429476c6ba5fd",
+          "node_count": 23681,
+          "recipe_sha256": "1a1057cfb0e437a3eb852fdbe015178bdede39bce82dd51a1a585dab8e1ca4df",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "b3fb655302eb25139117e02dfd0ae865229f97abba0187fd716c3ad7ba25d889",
+          "tetrahedron_count": 128093
+        },
+        "plan_sha256": "5a83302132a245a1517bcfb72c11c05459e6004da4e8ae3d2e8547508d13ba33",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.36262063867988,
+          "heater_mean_rise_K": 16.48620674532185,
+          "maximum_temperature_K": 317.8084898568532,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 15.514580637801402,
+          "peak_rise_K": 17.808489856853214,
+          "ring_mean_K_per_mW": 5.442840859549976,
+          "ring_mean_rise_K": 6.247592410174093
+        },
+        "timing": {
+          "target_solve_seconds": 1.0784835620142985,
+          "unit_solve_seconds_including_compile": 1.4750020460051019
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 4e-05,
+            "domain_y": 4e-05,
+            "substrate_thickness": 5e-05
+          },
+          "name": "domain_40um_substrate_50um",
+          "recipe_sha256": "f369110a7be63a324ae2a05b82fc7e8edad8cf6476b58207abdc66b55d2e4bbb",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "depth_extent_interaction"
+        },
+        "case_sha256": "0142bb8e93a72b3ef7f579df1cb7cdf38e3f9b33b5c376068d40219ab066ef26",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.021779485786770983,
+            "predicted_joule_power_W": 0.0011478691574612464,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.2295738314922493,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.021779485786770983
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "6fd40de2ca40506b52901769f463b45970f6d77a41dd7e5318628b53ffc3a6fb",
+          "mesh_report_sha256": "83ba5d6ae78afe6c03b62f167eaa10373873ee0ca75d8683fd06b7296582d4cd",
+          "recipe_sha256": "f369110a7be63a324ae2a05b82fc7e8edad8cf6476b58207abdc66b55d2e4bbb",
+          "source_msh_sha256": "e6c225c18197067a9ddc501009e47816dea427ea9ed2775a7010650a654ae049"
+        },
+        "gmsh": {
+          "elapsed_seconds": 5.734445072012022,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.9649156452792e-06,
+          "minimum_mean_ratio": 0.1616731364872426,
+          "node_count": 49498,
+          "tetrahedron_count": 272758
+        },
+        "numerics": {
+          "charge_balance_relative_error": 2.0743763472483776e-09,
+          "current_backward_error": 1.4151413089244196e-12,
+          "dirichlet_outward_power_W": 0.0011478303052485225,
+          "electrical_energy_relative_error": 6.78569736833408e-11,
+          "electrical_joule_power_W": 0.001147869157461247,
+          "joule_transfer_relative_error": 9.445346322253702e-17,
+          "robin_outward_power_W": 3.885221447158203e-08,
+          "target_current_iterations": 376,
+          "target_thermal_iterations": 630,
+          "thermal_backward_error": 5.456116032997425e-15,
+          "thermal_balance_relative_error": 7.611060066466241e-13,
+          "unit_current_iterations": 376,
+          "unit_thermal_iterations": 630
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 141,
+            "al_contact_positive": 142,
+            "tin_heater": 6556
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "b2807e65b444dfedb1cd0b97e311d9952589a17c5c116e5163c6c314e36f311d",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "83ba5d6ae78afe6c03b62f167eaa10373873ee0ca75d8683fd06b7296582d4cd",
+          "node_count": 49498,
+          "recipe_sha256": "f369110a7be63a324ae2a05b82fc7e8edad8cf6476b58207abdc66b55d2e4bbb",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "48917dd467eb22d691c698ec8a90d96cfe149d3fc9567caa3a665c12aa89beec",
+          "tetrahedron_count": 272758
+        },
+        "plan_sha256": "481e9dba76552446e79300e2e2fc278c9413792c2291c3eb6912acfd1a8bffef",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.576129298237577,
+          "heater_mean_rise_K": 16.731489256614168,
+          "maximum_temperature_K": 318.06362091180324,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 15.736654996249502,
+          "peak_rise_K": 18.06362091180324,
+          "ring_mean_K_per_mW": 5.655601053710036,
+          "ring_mean_rise_K": 6.491890016459081
+        },
+        "timing": {
+          "target_solve_seconds": 2.4422032099973876,
+          "unit_solve_seconds_including_compile": 3.0297999160247855
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 8e-05,
+            "domain_y": 8e-05,
+            "substrate_thickness": 5e-06
+          },
+          "name": "domain_80um_substrate_5um",
+          "recipe_sha256": "b852d35629b0c9ce51ec424e6a3c21a22682a118a5729cdaef6de69b28272053",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "depth_extent_interaction"
+        },
+        "case_sha256": "5f5f35862269c9b733629471613872893bccd8c90e38943fb97dd4d148574810",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.02177893830656442,
+            "predicted_joule_power_W": 0.0011478980126622938,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.22957960253245877,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.02177893830656442
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "a767bc7b05b78a9d4027cb45e95de1f35165a4de7438f56713536ea92d1888ff",
+          "mesh_report_sha256": "8d4aacd7bd30b1723926d414837df08037bc2f818cc1d366e6c8c9c8757a4db3",
+          "recipe_sha256": "b852d35629b0c9ce51ec424e6a3c21a22682a118a5729cdaef6de69b28272053",
+          "source_msh_sha256": "6fbff05dfc2bb0039b68517f52896d915e6e55f66308f7a1483aaa988e37c3b1"
+        },
+        "gmsh": {
+          "elapsed_seconds": 5.29913992100046,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.9649156452792e-06,
+          "minimum_mean_ratio": 0.22803641852062903,
+          "node_count": 56019,
+          "tetrahedron_count": 293620
+        },
+        "numerics": {
+          "charge_balance_relative_error": 4.67295179762179e-09,
+          "current_backward_error": 1.3909584890710847e-12,
+          "dirichlet_outward_power_W": 0.00114786265481327,
+          "electrical_energy_relative_error": 4.1907948147247815e-12,
+          "electrical_joule_power_W": 0.0011478980126622938,
+          "joule_transfer_relative_error": 9.445108890561965e-17,
+          "robin_outward_power_W": 3.535784590012315e-08,
+          "target_current_iterations": 377,
+          "target_thermal_iterations": 586,
+          "thermal_backward_error": 7.540503379593219e-15,
+          "thermal_balance_relative_error": 1.3607568378651142e-12,
+          "unit_current_iterations": 377,
+          "unit_thermal_iterations": 585
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 142,
+            "al_contact_positive": 141,
+            "tin_heater": 6556
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "7ec17fc0954c9c8fd2a452079dc3244d27218635d22fc496f20227fe5135ad1f",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "8d4aacd7bd30b1723926d414837df08037bc2f818cc1d366e6c8c9c8757a4db3",
+          "node_count": 56019,
+          "recipe_sha256": "b852d35629b0c9ce51ec424e6a3c21a22682a118a5729cdaef6de69b28272053",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "0aac6b4e42110a2630a73a300a734b5fc61bfa698a11db862d5b88782f714a7b",
+          "tetrahedron_count": 293620
+        },
+        "plan_sha256": "c1b84febf362a5c795e2294b108f0c15b13157b90973206983517684952bed65",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.428386835490057,
+          "heater_mean_rise_K": 16.56231657438184,
+          "maximum_temperature_K": 317.9129628875446,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 15.605012544624485,
+          "peak_rise_K": 17.91296288754461,
+          "ring_mean_K_per_mW": 5.450492458776495,
+          "ring_mean_rise_K": 6.256609461460357
+        },
+        "timing": {
+          "target_solve_seconds": 2.412443106994033,
+          "unit_solve_seconds_including_compile": 2.9094551890157163
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "adiabatic",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 8e-05,
+            "domain_y": 8e-05,
+            "substrate_thickness": 5e-05
+          },
+          "name": "domain_80um_substrate_50um",
+          "recipe_sha256": "b964c6cdc57f4cfd6d9cf9a5e23a74b74e7fbc03c804835ae65d0aac456c2b94",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "depth_extent_interaction"
+        },
+        "case_sha256": "06371362321dd65ec49f10151c1afabe7f9c6211f696b82154ed6cd8fae3b5d9",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.021779982855727416,
+            "predicted_joule_power_W": 0.001147842960465225,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.22956859209304498,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.021779982855727416
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "b10083b8146663e8b503f97514e0d1946ec736517ce5d98903045b8c36c76c7e",
+          "mesh_report_sha256": "5b17d262ec8b741212e07cc7d51f06e241cbd574de3ea62ef9eb0021e5451e85",
+          "recipe_sha256": "b964c6cdc57f4cfd6d9cf9a5e23a74b74e7fbc03c804835ae65d0aac456c2b94",
+          "source_msh_sha256": "51c4258df759b9a8855bfbf87282a5aad219f8f4af743f2517d7490f4477ef2b"
+        },
+        "gmsh": {
+          "elapsed_seconds": 14.70572583199828,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.9649156452792e-06,
+          "minimum_mean_ratio": 0.24695154302964,
+          "node_count": 148249,
+          "tetrahedron_count": 838635
+        },
+        "numerics": {
+          "charge_balance_relative_error": 4.613771679822045e-09,
+          "current_backward_error": 1.273422458020443e-12,
+          "dirichlet_outward_power_W": 0.0011478041145070088,
+          "electrical_energy_relative_error": 7.674264006124915e-11,
+          "electrical_joule_power_W": 0.0011478429604652245,
+          "joule_transfer_relative_error": 9.445561891550684e-17,
+          "robin_outward_power_W": 3.8845958438215065e-08,
+          "target_current_iterations": 378,
+          "target_thermal_iterations": 695,
+          "thermal_backward_error": 7.285980266704569e-15,
+          "thermal_balance_relative_error": 9.681700938838514e-14,
+          "unit_current_iterations": 376,
+          "unit_thermal_iterations": 694
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "adiabatic",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "cb8d5b3f35bd2007d0419e526aebe7e18bbbac6ab1418fe71c8726d278f6289c",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 137,
+            "al_contact_positive": 137,
+            "tin_heater": 6557
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "8c16c30e02a3d88cc7c1c4dc9c58f974a0a0f8dbff871a5b2d7698ffbb8dec86",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "5b17d262ec8b741212e07cc7d51f06e241cbd574de3ea62ef9eb0021e5451e85",
+          "node_count": 148249,
+          "recipe_sha256": "b964c6cdc57f4cfd6d9cf9a5e23a74b74e7fbc03c804835ae65d0aac456c2b94",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "be1a38901f18ad727b2195f184be0871f3597412e207506a77c5edd1759dace5",
+          "tetrahedron_count": 838635
+        },
+        "plan_sha256": "f9739a187a813e1da14c099451a15f3495a0068ecb68c89c50f2b46596774b0a",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.519063018349767,
+          "heater_mean_rise_K": 16.665604278163755,
+          "maximum_temperature_K": 318.0022469841742,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 15.683545227195372,
+          "peak_rise_K": 18.002246984174178,
+          "ring_mean_K_per_mW": 5.541738464113589,
+          "ring_mean_rise_K": 6.3610454847721485
+        },
+        "timing": {
+          "target_solve_seconds": 8.940997218014672,
+          "unit_solve_seconds_including_compile": 9.441185450006742
+        }
+      },
+      {
+        "boundary": {
+          "ambient_temperature_K": 300.0,
+          "bottom": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+          "lateral": {
+            "condition": "isothermal",
+            "transfer_W_per_m2_K": 0.0
+          },
+          "schema_version": "femx.ring-heater-thermal-boundary/v1",
+          "top": {
+            "condition": "robin",
+            "transfer_W_per_m2_K": 10.0
+          }
+        },
+        "case": {
+          "boundary_sha256": "ec0d120e3b4cd1aa7837cf56e931c9fd214872e9e0f26a73b3dbe69f36757208",
+          "claim_scope": "one controlled computational sensitivity factor; values are not a calibrated wafer, die, package, or operating-point recommendation",
+          "geometry_m": {
+            "domain_x": 4e-05,
+            "domain_y": 4e-05,
+            "substrate_thickness": 5e-06
+          },
+          "name": "ideal_isothermal_sidewall_bound",
+          "recipe_sha256": "1a1057cfb0e437a3eb852fdbe015178bdede39bce82dd51a1a585dab8e1ca4df",
+          "reference_case": "source_envelope",
+          "schema_version": "femx.ring-heater-thermal-sensitivity-case/v1",
+          "varied_axis": "sidewall_boundary"
+        },
+        "case_sha256": "e5562d01be5dad929d6a288023d8214e23537463f074a6d64fbeda72e1f2330e",
+        "excitation": {
+          "calibration": {
+            "assumption": "linear temperature-independent electrical conductivity",
+            "conductance_S": 0.02177975331219754,
+            "predicted_joule_power_W": 0.0011478550579358028,
+            "schema_version": "femx.linear-current-calibration/v1",
+            "target_current_A": 0.005,
+            "target_voltage_V": 0.22957101158716056,
+            "unit_voltage_V": 1.0,
+            "unit_voltage_joule_power_W": 0.02177975331219754
+          },
+          "field_evaluation": {
+            "interpretation": "the projection role selects the low-temperature current; recomputing the linear field does not add calibration or fabricated-device evidence",
+            "method": "direct JAX solve at the calibrated 5 mA terminal voltage"
+          },
+          "operating_point": {
+            "assumptions": [
+              "linear temperature-independent electrical conductivity",
+              "constant thermal conductivity and linear thermal boundaries"
+            ],
+            "claim_scope": "near-ambient linear projection of the source-pinned benchmark; not an independent solve, domain correction, or fabricated-device calibration",
+            "current_and_voltage_scale": 0.33333333333333337,
+            "evidence_tier": "derived_linear_projection",
+            "joule_power_and_temperature_rise_scale": 0.11111111111111113,
+            "name": "low_temperature_projection",
+            "schema_version": "femx.public-ring-heater-operating-point/v1",
+            "source_reproduction_current_A": 0.015,
+            "target_current_A": 0.005
+          }
+        },
+        "geometry": {
+          "canonical_mesh_sha256": "9a4f845d72b6f4194105a43b509e7d7f4838904bb9f14fc3b7ca4aef3bc5a787",
+          "mesh_report_sha256": "2040e00d3f5884315e6f1a31ce0b308219ee2900582aef225e8429476c6ba5fd",
+          "recipe_sha256": "1a1057cfb0e437a3eb852fdbe015178bdede39bce82dd51a1a585dab8e1ca4df",
+          "source_msh_sha256": "b6f0b3c4b553501ff4d99f1d5e4996951e9b286df376929f0ff8690ca43f3c30"
+        },
+        "gmsh": {
+          "elapsed_seconds": 2.269325951987412,
+          "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+          "version": "4.12.1"
+        },
+        "mesh": {
+          "maximum_region_volume_relative_error": 5.964915645098276e-06,
+          "minimum_mean_ratio": 0.15938799690867736,
+          "node_count": 23681,
+          "tetrahedron_count": 128093
+        },
+        "numerics": {
+          "charge_balance_relative_error": 1.2923245219533866e-09,
+          "current_backward_error": 1.3283863105288137e-12,
+          "dirichlet_outward_power_W": 0.0011478201822468113,
+          "electrical_energy_relative_error": 5.3226691573457516e-11,
+          "electrical_joule_power_W": 0.0011478550579358028,
+          "joule_transfer_relative_error": 9.445462342913172e-17,
+          "robin_outward_power_W": 3.487569296630211e-08,
+          "target_current_iterations": 378,
+          "target_thermal_iterations": 553,
+          "thermal_backward_error": 7.77526022047316e-15,
+          "thermal_balance_relative_error": 1.7313532474529868e-12,
+          "unit_current_iterations": 377,
+          "unit_thermal_iterations": 548
+        },
+        "plan": {
+          "boundary": {
+            "ambient_temperature_K": 300.0,
+            "bottom": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "claim_scope": "declared numerical boundary scenario; Robin coefficients require package- or fixture-specific justification before device interpretation",
+            "lateral": {
+              "condition": "isothermal",
+              "transfer_W_per_m2_K": 0.0
+            },
+            "schema_version": "femx.ring-heater-thermal-boundary/v1",
+            "top": {
+              "condition": "robin",
+              "transfer_W_per_m2_K": 10.0
+            }
+          },
+          "boundary_sha256": "ec0d120e3b4cd1aa7837cf56e931c9fd214872e9e0f26a73b3dbe69f36757208",
+          "claim_scope": "one numerical envelope or boundary perturbation; not source-reproduction parity, a calibrated package model, or fabricated-device prediction",
+          "current_region_cell_counts": {
+            "al_contact_negative": 142,
+            "al_contact_positive": 141,
+            "tin_heater": 6558
+          },
+          "electrical_boundary_conditions": {
+            "remaining_conductor_boundary": "zero_normal_current",
+            "terminal_negative": "0 V",
+            "terminal_positive": "applied_voltage"
+          },
+          "import_record_sha256": "0cdf0d4626eb636382aef94abe4897142814af809191266a6d61623558f978c7",
+          "joule_transfer": "exact conductor-parent-cell identity",
+          "mesh_admission_sha256": "8c82ee90acf02fa8118a7bddcfdcfc81f0448d362d9634edd2b6492a6b14e8d0",
+          "mesh_report_sha256": "2040e00d3f5884315e6f1a31ce0b308219ee2900582aef225e8429476c6ba5fd",
+          "node_count": 23681,
+          "recipe_sha256": "1a1057cfb0e437a3eb852fdbe015178bdede39bce82dd51a1a585dab8e1ca4df",
+          "reference_sha256": "260768024e75e85f4a9224048bc67481f51665d6057cc6885ccc4a04629fd1e7",
+          "schema_version": "femx.ring-heater-thermal-sensitivity/v1",
+          "terminal_node_counts": {
+            "terminal_negative": 20,
+            "terminal_positive": 20
+          },
+          "tet4_plan_sha256": "de0c4c320d6ffbac81d88d61268ba3ed3dca7e2aa810963ecc3f77a1c8675191",
+          "tetrahedron_count": 128093
+        },
+        "plan_sha256": "b19df3479f751d880ecc8540af42f6a1f9f2258ec948bf0b3ef085371d68f2bb",
+        "status": "passed",
+        "temperature": {
+          "heater_mean_K_per_mW": 14.360516766389967,
+          "heater_mean_rise_K": 16.483791804872624,
+          "maximum_temperature_K": 317.80606966226117,
+          "minimum_temperature_K": 300.0,
+          "peak_K_per_mW": 15.512472188154108,
+          "peak_rise_K": 17.806069662261166,
+          "ring_mean_K_per_mW": 5.4413855074893815,
+          "ring_mean_rise_K": 6.245921876950263
+        },
+        "timing": {
+          "target_solve_seconds": 1.0504208310157992,
+          "unit_solve_seconds_including_compile": 1.5372200309939217
+        }
+      }
+    ],
+    "claim_scope": "bounded constant-property CPU sensitivity; not mesh-converged, package-calibrated, or fabricated-device evidence",
+    "comparisons": {
+      "domain_40um": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 0.9688368882046267,
+        "peak_K_per_mW_relative_to_source_envelope": 0.973178980895745,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 0.9402487726079836
+      },
+      "domain_40um_substrate_50um": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 0.9868661234513993,
+        "peak_K_per_mW_relative_to_source_envelope": 0.9891949011156114,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 0.9875342576314515
+      },
+      "domain_40um_substrate_5um": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 0.9724106765443467,
+        "peak_K_per_mW_relative_to_source_envelope": 0.975235465447883,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 0.9503838330526971
+      },
+      "domain_80um": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 0.9729434822388822,
+        "peak_K_per_mW_relative_to_source_envelope": 0.9766697273232361,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 0.9411571487131942
+      },
+      "domain_80um_substrate_50um": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 0.9830024929044692,
+        "peak_K_per_mW_relative_to_source_envelope": 0.9858564589396664,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 0.9676525144141925
+      },
+      "domain_80um_substrate_5um": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 0.9768633285737197,
+        "peak_K_per_mW_relative_to_source_envelope": 0.9809199505655192,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 0.9517198919949905
+      },
+      "ideal_isothermal_sidewall_bound": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 0.9722682354169045,
+        "peak_K_per_mW_relative_to_source_envelope": 0.9751029298079481,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 0.9501297115184689
+      },
+      "source_envelope": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 1.0,
+        "peak_K_per_mW_relative_to_source_envelope": 1.0,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 1.0
+      },
+      "substrate_50um": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 1.056578050145389,
+        "peak_K_per_mW_relative_to_source_envelope": 1.0521875259205125,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 1.149027923511301
+      },
+      "substrate_5um": {
+        "heater_mean_K_per_mW_relative_to_source_envelope": 1.004805175705684,
+        "peak_K_per_mW_relative_to_source_envelope": 1.0057748307992505,
+        "ring_mean_K_per_mW_relative_to_source_envelope": 1.0161157442281405
+      }
+    },
+    "elapsed_seconds": 229.71428691400797,
+    "runtime": {
+      "backend": "cpu",
+      "device_count": 1,
+      "jax_version": "0.10.1",
+      "jaxlib_version": "0.10.1",
+      "numpy_version": "2.4.6",
+      "python_version": "3.13.13",
+      "x64_enabled": true
+    },
+    "schema_version": "femx.ring-heater-thermal-sensitivity-evidence/v1",
+    "source_files": {
+      "scripts/run_ring_heater_thermal_sensitivity.py": "5abfcb22a39e2909ebfe524e72225a29578fb03b8425b904c668a4b537b7c1e1",
+      "src/femx/applications/ring_heater.py": "daee91200d952017c68dc775571c866f57bfe934e57db2f726156d5e367c7b73",
+      "src/femx/backends/jax/tet4_electrothermal.py": "9cb7959ec49a78641ed06ddbe5bff718811af733dbe8c3407f0320756bbe8253",
+      "src/femx/meshing/gmsh/ring_heater.py": "97204393ef69226c0973bd51f0e546edfd960654677d9c28778fbcc43f0386b1",
+      "uv.lock": "697b6b437ee333acb5148c3e6e0903647c55be9ad8546ff69fc5ad497e22b3f8"
+    },
+    "status": "passed"
+  },
+  "source_evidence_sha256": "71a18692ea63b0d487be22efb57f4af930829d8c6d7e5207296b3f52061b8d5e"
+}

@@ -1,0 +1,638 @@
+{
+  "artifacts": {
+    "README.md": "2f09cef51e81d5040667902c9652f6622307cdcb284e2fce9a1be4e53ede735d",
+    "cells.csv": "d55455489f2d489ccbf34bd8cbbc5726688f135821acf1f8c255549d63b0c622",
+    "figure.png": "434e001547db3296fe8e9f36d6db91c023b570a1cd79231a052ab9e051d795bf",
+    "figure.svg": "f4e9fbb63ab42f9bab39010f45f92bd185814241446d806a90e4f71590fb2b4e",
+    "generation.uv.lock": "2cf58c7dcc41fcfce087fa48e27710de131aa746bd77da492b181b48129b2965",
+    "nodes.csv": "f7701916f9f83c4cbe6aab33f820eda2b4fd6bbfb6e1f5ce26fec98567cecf12",
+    "potential.csv": "62e439b38dc99cbc46537d1462b696fa8e53000cfe7ba5017fa81e76daf900ab"
+  },
+  "claim_scope": "same-discretization JAX/Elmer field parity and conservation on one coarse public 3D ring-heater benchmark; not formal convergence, TPU, FDTDX response, foundry calibration, measurement, or fabricated-device prediction",
+  "figure": {
+    "clipping": "none; every field scale uses the complete nodal range",
+    "depth_sorting": "manual painter order; cladding backdrops share the BOX background stage before device solids; Axes3D computed z-order disabled",
+    "difference_colormap": "RdBu_r",
+    "difference_colormap_source": "Matplotlib built-in RdBu_r; exact Matplotlib version retained in provenance",
+    "difference_limits_K": [
+      -1.8941642565550865e-07,
+      1.8941642565550865e-07
+    ],
+    "difference_palette_semantics": "zero-centered ColorBrewer RdBu diverging map with red for positive Elmer-minus-JAX and blue for negative; symmetric complete retained range",
+    "difference_vertical_slice_x_m": -3.824696093012185e-06,
+    "exact_plotted_sources": [
+      "nodes.csv direct JAX and Elmer fields",
+      "cells.csv",
+      "PublicRingHeater3D canonical geometry"
+    ],
+    "figure_id": "3d-ring-heater-figure-cf2903db94fb6f4d",
+    "font": "7 pt sans serif",
+    "geometry_recipe_sha256": "d11fa5ac9e6a654af3ab18debd855b269125999c3612535c9698cb0362a72d4d",
+    "geometry_source": "femx.meshing.gmsh.PublicRingHeater3D",
+    "heat_flux_overlay": "not displayed; no direction arrows are inferred from this figure",
+    "heater_vertical_gap_um": 2.0,
+    "horizontal_device_boundary_overlay": "unfilled Si ring and bus boundaries in one muted-neutral line system; identified directly in the panel subtitle and never used to encode temperature",
+    "horizontal_slice_z_m": 1.1e-07,
+    "horizontal_temperature_contours": "none; omitted so scalar isolines cannot be confused with source-CAD boundaries",
+    "hot_vertical_slice_x_m": -3.532908045854958e-06,
+    "hottest_node_id": 6312,
+    "largest_temperature_difference_node_id": 4203,
+    "line_width_pt": 0.75,
+    "material_palette": {
+      "fill_colors": {
+        "al": "#6F7885",
+        "si_device": "#685AB8",
+        "si_substrate": "#4B3F72",
+        "sio2": "#167786",
+        "tin": "#604900"
+      },
+      "frame_colors": {
+        "al": "#303741",
+        "si_device": "#352B76",
+        "si_substrate": "#2B2344",
+        "sio2": "#083F48",
+        "tin": "#332600"
+      },
+      "id": "femx-semantic-materials-v1.1",
+      "policy": "v1.1 light-canvas fill and frame pairs; same material keeps one hue and display role uses geometry, outline, and opacity",
+      "profile": "light",
+      "region_mapping": {
+        "al_contacts": "al",
+        "silica_box_and_cladding": "sio2",
+        "silicon_ring_and_buses": "si_device",
+        "silicon_substrate": "si_substrate",
+        "tin_heater": "tin"
+      },
+      "role_modulation": "BOX is a solid fill; upper-cladding extent uses the same SiO2 base colour with reduced opacity"
+    },
+    "material_render_order": [
+      "continuous_silicon_substrate_with_truncated_handle_context",
+      "solved_substrate_depth_boundary",
+      "silica_box",
+      "silica_cladding_extent_backdrops",
+      "silicon_bus_upper_far",
+      "silicon_ring",
+      "tin_heater",
+      "silicon_bus_lower_near",
+      "al_contacts"
+    ],
+    "material_z_extents_um": {
+      "al_contacts": [
+        2.36,
+        2.8
+      ],
+      "domain": [
+        -2.5,
+        2.8
+      ],
+      "silica_box": [
+        -2.0,
+        0.0
+      ],
+      "silica_cladding": [
+        0.0,
+        2.8
+      ],
+      "silicon_device": [
+        0.0,
+        0.22
+      ],
+      "silicon_substrate": [
+        -2.5,
+        -2.0
+      ],
+      "tin_heater": [
+        2.22,
+        2.36
+      ]
+    },
+    "operating_point": {
+      "algebraic_field_rescaling_used": false,
+      "electrical_joule_power_W": 0.010330771176500487,
+      "field_evaluation": "direct native JAX and external Elmer solves at the recorded target voltage; no temperature or parity field is obtained by algebraic rescaling",
+      "field_evidence_tier": "direct_jax_elmer_same_mesh_solve",
+      "name": "source_reproduction",
+      "operating_point_selection_tier": "source_pinned_parity",
+      "target_current_A": 0.015,
+      "target_voltage_V": 0.6887180784333656
+    },
+    "optical_outline_overlay": "admitted analytic CAD boundaries for the 5 um-radius, 0.5 um-wide ring and buses; muted neutral dual-contrast lines without scalar encoding",
+    "panel_a_dimension_annotation": {
+      "equal_physical_axis_scale": true,
+      "lateral_boundary": "adiabatic sides",
+      "lateral_extent_um": {
+        "x": [
+          -10.0,
+          10.0
+        ],
+        "y": [
+          -10.0,
+          10.0
+        ]
+      },
+      "scale_scope": "solved geometry only",
+      "substrate_handle_depth_truncated": true,
+      "substrate_handle_nominal_thickness_um": 725.0,
+      "tin_to_top_silica_and_al_vias_share_z_span": true,
+      "z_thicknesses_um": {
+        "al_vias": 0.44,
+        "silica_box": 2.0,
+        "silicon_device": 0.22,
+        "silicon_substrate": 0.5,
+        "silicon_to_tin_oxide_gap": 2.0,
+        "tin_heater": 0.14,
+        "tin_to_model_top_silica": 0.44
+      }
+    },
+    "panel_a_projection": "orthographic axonometric",
+    "panel_a_scalar_overlay": "none; categorical material geometry only",
+    "panels": {
+      "a": "source-pinned analytic CAD surfaces drawn in physical z proportion as silicon substrate within a continuous but depth-truncated handle-wafer depiction, full BOX plus two far-side 2D silica-cladding extent backdrops, silicon device, TiN heater, and aluminum contacts; no scalar field is overlaid",
+      "b": "direct-solve P1 JAX temperature-rise intersection at z=0.11 um with only the source-CAD Si-device boundary overlaid; no scalar isolines",
+      "c": "direct-solve P1 JAX temperature-rise intersection through the hottest node with the high-contrast source-CAD material silhouette",
+      "d": "signed direct-solve P1 Elmer-minus-JAX intersection through the largest-error node",
+      "e": "all-node direct-solve JAX-versus-Elmer temperature-rise parity with metrics outside the plotting area"
+    },
+    "physical_scale_policy": "panel-a solved geometry uses a one-to-one micrometre drawing scale; the continuous Si handle below the dashed solve boundary is deliberately depth-truncated and not drawn in proportion to its approximately 725 um nominal thickness",
+    "physical_size_inches": [
+      7.2,
+      4.8
+    ],
+    "png_dpi": 300,
+    "png_pixels": [
+      2160,
+      1440
+    ],
+    "rendering_identity": {
+      "canvas": {
+        "grid_width_ratios": [
+          1.28,
+          1.0,
+          1.0
+        ],
+        "physical_size_inches": [
+          7.2,
+          4.8
+        ],
+        "png_dpi": 300
+      },
+      "difference": {
+        "colormap": "RdBu_r",
+        "normalization": "zero-centered symmetric complete retained range"
+      },
+      "field_outlines": {
+        "horizontal_color": "#E7ECF2",
+        "horizontal_contrast_width_pt": 0.72,
+        "horizontal_semantics": "source-CAD Si-device boundary; no scalar isolines",
+        "horizontal_width_pt": 0.34,
+        "vertical_color": "#F8FAFC",
+        "vertical_contrast_color": "#111827",
+        "vertical_contrast_width_pt": 1.18,
+        "vertical_width_pt": 0.5
+      },
+      "material_palette": {
+        "fill_colors": {
+          "al": "#6F7885",
+          "si_device": "#685AB8",
+          "si_substrate": "#4B3F72",
+          "sio2": "#167786",
+          "tin": "#604900"
+        },
+        "frame_colors": {
+          "al": "#303741",
+          "si_device": "#352B76",
+          "si_substrate": "#2B2344",
+          "sio2": "#083F48",
+          "tin": "#332600"
+        },
+        "id": "femx-semantic-materials-v1.1",
+        "profile": "light"
+      },
+      "panel_a": {
+        "box_zoom": 0.98,
+        "displayed_handle_depth_um": 1.5,
+        "legend": {
+          "anchor_figure_fraction": [
+            0.125,
+            0.845
+          ],
+          "column_spacing": 0.85,
+          "columns": 2,
+          "handle_length": 1.25,
+          "handle_text_padding": 0.4,
+          "layout": "left-shifted to preserve the panel-a-to-b label gutter"
+        },
+        "projected_device_occlusion": "opaque far-bus, ring assembly, near-bus painter layers; the ring hides the rear bus and the near bus remains foreground",
+        "projected_device_painter_order": [
+          "silicon_bus_upper_far",
+          "silicon_ring",
+          "tin_heater",
+          "silicon_bus_lower_near",
+          "al_contacts"
+        ],
+        "projection": "orthographic axonometric",
+        "ring_and_bus_alpha": 1.0,
+        "scalar_overlay": "none",
+        "silicon_device_painter_order": [
+          "silicon_bus_upper_far",
+          "silicon_ring",
+          "silicon_bus_lower_near"
+        ],
+        "view_azimuth_deg": -56.0,
+        "view_elevation_deg": 26.0
+      },
+      "parity_metrics_placement": "compact two-line subtitle above the plotting area",
+      "rendering_revision": "paper-figure-v5",
+      "runtime": {
+        "matplotlib_version": "3.11.1",
+        "numpy_version": "2.4.6"
+      },
+      "schema_version": "femx.figure.3d-ring-heater-render-identity/v1",
+      "temperature": {
+        "colormap": "inferno",
+        "horizontal_contours": "none; scalar isolines are omitted so they cannot be confused with CAD boundaries",
+        "normalization": "linear complete retained range",
+        "panel_a_overlay": "none; categorical material geometry only",
+        "panel_scope": [
+          "b",
+          "c"
+        ]
+      }
+    },
+    "rendering_identity_sha256": "cfd2054b463b5a857c3d0f50bf8c3bf84e3168b937a9c63295f8f84cd14e1a12",
+    "run_id": "3d-ring-heater-run-12f460bc7fc6db4f",
+    "silica_cladding_backdrop": {
+      "kind": "two far-side two-dimensional extent planes",
+      "physical_silica_volume_changed": false,
+      "planes": [
+        "x_min",
+        "y_max"
+      ],
+      "render_layer": "with silica BOX, before device solids",
+      "volumetric_cladding_rendered": false,
+      "z_extent_m": [
+        0.0,
+        2.8e-06
+      ]
+    },
+    "substrate_display_extension_below_model_um": 1.5,
+    "substrate_display_policy": "one continuous Si solid; its top 0.5 um is solved and the lower 1.5 um display segment is a depth-truncated, not-to-scale depiction of an approximately 725 um nominal handle wafer",
+    "substrate_display_z_extent_um": [
+      -4.0,
+      -2.0
+    ],
+    "substrate_handle_context": {
+      "display_scale_below_solve_boundary": "depth truncated; not to scale",
+      "displayed_unsolved_depth_um": 1.5,
+      "material_continuity": "same Si fill and frame; no intervening layer",
+      "modeled_top_thickness_um": 0.5,
+      "nominal_full_thickness_um": 725.0,
+      "nominal_thickness_qualifier": "approximate contextual value; not source-pinned solved geometry",
+      "solve_boundary_z_um": -2.5
+    },
+    "surface_visibility": "one continuous opaque Si substrate solid includes the solved top 0.5 um and a depth-truncated handle-wafer context below its dashed solve boundary; the full BOX is visible, while upper silica is reduced to faint x-min and y-max backdrops",
+    "temperature_colormap": "inferno",
+    "temperature_colormap_source": "Matplotlib built-in inferno; exact Matplotlib version retained in provenance",
+    "temperature_limits_K": [
+      0.0,
+      164.34757366213665
+    ],
+    "temperature_palette_semantics": "linear perceptually uniform sequential inferno; shared by panels b and c; complete retained range without clipping",
+    "temperature_panel_scope": [
+      "b",
+      "c"
+    ],
+    "three_dimensional_z_display_exaggeration": 1.0,
+    "vertical_device_outline_overlay": {
+      "fixed_x_m": -3.532908045854958e-06,
+      "geometry_source": "femx.meshing.gmsh.PublicRingHeater3D",
+      "panel": "c",
+      "style": "unfilled white 0.50 pt outlines with a 1.18 pt dark contrast stroke; material identity additionally uses line style, never scalar colour",
+      "visible_regions": [
+        "silicon_substrate",
+        "silicon_ring",
+        "silicon_bus_lower",
+        "silicon_bus_upper",
+        "tin_heater"
+      ]
+    }
+  },
+  "figure_id": "3d-ring-heater-figure-cf2903db94fb6f4d",
+  "identity": {
+    "figure": {
+      "rendering": {
+        "canvas": {
+          "grid_width_ratios": [
+            1.28,
+            1.0,
+            1.0
+          ],
+          "physical_size_inches": [
+            7.2,
+            4.8
+          ],
+          "png_dpi": 300
+        },
+        "difference": {
+          "colormap": "RdBu_r",
+          "normalization": "zero-centered symmetric complete retained range"
+        },
+        "field_outlines": {
+          "horizontal_color": "#E7ECF2",
+          "horizontal_contrast_width_pt": 0.72,
+          "horizontal_semantics": "source-CAD Si-device boundary; no scalar isolines",
+          "horizontal_width_pt": 0.34,
+          "vertical_color": "#F8FAFC",
+          "vertical_contrast_color": "#111827",
+          "vertical_contrast_width_pt": 1.18,
+          "vertical_width_pt": 0.5
+        },
+        "material_palette": {
+          "fill_colors": {
+            "al": "#6F7885",
+            "si_device": "#685AB8",
+            "si_substrate": "#4B3F72",
+            "sio2": "#167786",
+            "tin": "#604900"
+          },
+          "frame_colors": {
+            "al": "#303741",
+            "si_device": "#352B76",
+            "si_substrate": "#2B2344",
+            "sio2": "#083F48",
+            "tin": "#332600"
+          },
+          "id": "femx-semantic-materials-v1.1",
+          "profile": "light"
+        },
+        "panel_a": {
+          "box_zoom": 0.98,
+          "displayed_handle_depth_um": 1.5,
+          "legend": {
+            "anchor_figure_fraction": [
+              0.125,
+              0.845
+            ],
+            "column_spacing": 0.85,
+            "columns": 2,
+            "handle_length": 1.25,
+            "handle_text_padding": 0.4,
+            "layout": "left-shifted to preserve the panel-a-to-b label gutter"
+          },
+          "projected_device_occlusion": "opaque far-bus, ring assembly, near-bus painter layers; the ring hides the rear bus and the near bus remains foreground",
+          "projected_device_painter_order": [
+            "silicon_bus_upper_far",
+            "silicon_ring",
+            "tin_heater",
+            "silicon_bus_lower_near",
+            "al_contacts"
+          ],
+          "projection": "orthographic axonometric",
+          "ring_and_bus_alpha": 1.0,
+          "scalar_overlay": "none",
+          "silicon_device_painter_order": [
+            "silicon_bus_upper_far",
+            "silicon_ring",
+            "silicon_bus_lower_near"
+          ],
+          "view_azimuth_deg": -56.0,
+          "view_elevation_deg": 26.0
+        },
+        "parity_metrics_placement": "compact two-line subtitle above the plotting area",
+        "rendering_revision": "paper-figure-v5",
+        "runtime": {
+          "matplotlib_version": "3.11.1",
+          "numpy_version": "2.4.6"
+        },
+        "schema_version": "femx.figure.3d-ring-heater-render-identity/v1",
+        "temperature": {
+          "colormap": "inferno",
+          "horizontal_contours": "none; scalar isolines are omitted so they cannot be confused with CAD boundaries",
+          "normalization": "linear complete retained range",
+          "panel_a_overlay": "none; categorical material geometry only",
+          "panel_scope": [
+            "b",
+            "c"
+          ]
+        }
+      },
+      "run_id": "3d-ring-heater-run-12f460bc7fc6db4f",
+      "schema_version": "femx.figure.3d-ring-heater-render-identity/v1"
+    },
+    "policy": "run_id identifies retained numerical fields and their field generator; figure_id identifies that run plus explicit rendering rules",
+    "run": {
+      "canonical_mesh_sha256": "6b577d9ab996eab4570bda24c21d2cd8412eb684f2cd2f1992686c51c7588163",
+      "cells_sha256": "d55455489f2d489ccbf34bd8cbbc5726688f135821acf1f8c255549d63b0c622",
+      "field_generator_sha256": "6ae1b78498f500a2da8999351ea289df6fd0bdcabc59ae0445767b650767fb21",
+      "nodes_sha256": "f7701916f9f83c4cbe6aab33f820eda2b4fd6bbfb6e1f5ce26fec98567cecf12",
+      "potential_sha256": "62e439b38dc99cbc46537d1462b696fa8e53000cfe7ba5017fa81e76daf900ab",
+      "schema_version": "femx.figure.3d-ring-heater-run-identity/v1"
+    }
+  },
+  "metrics": {
+    "conductor_node_count": 2484,
+    "conductor_tetrahedron_count": 6831,
+    "electrical_joule_power_W": 0.010330771176500487,
+    "heater_volume_weighted_temperature_rise_K": 152.58671145032332,
+    "inferred_current_A": 0.015000000000000003,
+    "jax_bottom_outward_power_W": 0.010330456297505444,
+    "jax_charge_balance_relative_error": 1.9538391786915157e-09,
+    "jax_convection_outward_power_W": 3.148789922691778e-07,
+    "jax_current_backward_error": 1.306886971673242e-12,
+    "jax_current_iterations": 377,
+    "jax_electrical_energy_relative_error": 1.763979649127476e-13,
+    "jax_joule_transfer_relative_error": 8.395905041062185e-17,
+    "jax_thermal_backward_error": 7.61421873535378e-15,
+    "jax_thermal_balance_relative_error": 1.3416656255619174e-13,
+    "jax_thermal_iterations": 544,
+    "maximum_absolute_potential_difference_V": 2.3097082579859318e-10,
+    "maximum_absolute_temperature_difference_K": 1.8941642565550865e-07,
+    "maximum_region_volume_relative_error": 5.9649156452792e-06,
+    "maximum_temperature_K": 464.3475736346429,
+    "maximum_temperature_rise_K": 164.3475736346429,
+    "minimum_temperature_K": 300.0,
+    "minimum_tet4_mean_ratio": 0.13748479564981902,
+    "node_count": 12761,
+    "relative_l2_potential_difference": 1.5353267533832756e-10,
+    "relative_l2_temperature_rise_difference": 2.298417113807402e-10,
+    "ring_volume_weighted_temperature_rise_K": 59.16424660708543,
+    "rms_potential_difference_V": 6.196268455686803e-11,
+    "rms_temperature_difference_K": 2.161363927034409e-08,
+    "target_current_A": 0.015,
+    "target_current_relative_error": 2.312964634635743e-16,
+    "target_voltage_V": 0.6887180784333656,
+    "tetrahedron_count": 71808
+  },
+  "provenance": {
+    "elmer": {
+      "adapter_version": "adapter-0.1.0+elmer-26.2-devel.rev-4f2d7e4b9.sha256-a8aceea1fde4",
+      "case_sha256": "02ecf4a9e2a7ad557214262f74244592a00e4573ce75959497c63c8558391353",
+      "current_steady_change": [
+        2,
+        0.0
+      ],
+      "elmer_executable_sha256": "a8aceea1fde474a427fe4cf3fd9bd32ca61e03d702ec98811f4b374947e80b84",
+      "elmer_heat_solve_sha256": "2a64f60ae2b17ee6c14470f30939c73e0522383c852f67210bbb9eb4d56546c0",
+      "elmer_revision": "4f2d7e4b9",
+      "elmer_source_commit": "4f2d7e4b99f8f0dcf2f7ac579e056969373bf594",
+      "elmer_source_digest": "59634b49c59da9c7d069d3ccb5de206ba66b055837c51ab2d7ca3f88ef1cd49d",
+      "elmer_source_worktree_state": "clean",
+      "elmer_stat_current_solve_sha256": "7a2f8d5745cd057c1e4c64aa9b7ed45da78dead106d12ffc46fd78fb95ba5cf0",
+      "elmer_version": "26.2-devel",
+      "heat_steady_change": [
+        2,
+        0.0
+      ],
+      "input_sif_sha256": "3678c00d39303469ae74dc6b8432bb3e53c4339910b997e356a7e1b051e635e7",
+      "mesh_boundary_sha256": "3bb3eb276c0bbe303dd25a30ba02cc78cd752348115fef8f25a0ca42e562e421",
+      "mesh_elements_sha256": "4fc01e2576f1a6f297877ffcd7d082f34f654664dccb2327bbb2945366614f3a",
+      "mesh_header_sha256": "212971f03fdc1466f4b268ae77a3a25b6bb15ef980883064420825795c762ac4",
+      "mesh_nodes_sha256": "030ba32bac40f6cc5854e91209d2ae0b9a2d2279df96e036bcf58564ed32a5cf",
+      "numerically_converged": true,
+      "oracle_version": "adapter-0.1.0+elmer-26.2-devel.rev-4f2d7e4b9.sha256-a8aceea1fde4",
+      "plan_sha256": "74088f21b27ca35daf411a8e55ad3e58cbb27a68c8568822461675bb52e5e70c",
+      "potential_sha256_float64": "b777b15b787d970d27ac2d860cafa91570a79e36cf3949a037fc75d9d092c1ce",
+      "raw_vtu_artifact": "mesh/femx.vtu",
+      "raw_vtu_sha256": "8076f22c72ac55094ee46e0693f3589693adcd95e45168c805dc6df41cf603d0",
+      "result_numeric_source": "mesh/femx.result ASCII 3",
+      "result_save_count": "1",
+      "result_sha256": "3db68b82482126ead94386ba8e3d29188232ffcc4187bd316a2b402a9a3bafeb",
+      "result_timestep": "2",
+      "startinfo_sha256": "d2c1bd32bee265b97d21e167cffaf155151fa6ade66c789dfc942f7378e46476",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "fecf8965343853164c3e485a75c8fd598330453858f39e34cd6c10d02d5b4e36",
+      "temperature_sha256_float64": "cf695bf13f3678d6ea3b35d4e57392fb30e40e637af1469f11e39866c5226548"
+    },
+    "femx": {
+      "commit": "8215841f61ecaaae98a411de33800b0a0fad02da",
+      "field_generator_sha256": "6ae1b78498f500a2da8999351ea289df6fd0bdcabc59ae0445767b650767fb21",
+      "generator_sha256": "9629e0ec8683d773b010d37ed5bdf1fe2f3dc235e8bf752657c5f8a380022ee1",
+      "matplotlib_version": "3.11.1",
+      "numpy_version": "2.4.6",
+      "presentation_generator_sha256": "9629e0ec8683d773b010d37ed5bdf1fe2f3dc235e8bf752657c5f8a380022ee1",
+      "python_version": "3.13.13",
+      "uv_lock_artifact": "generation.uv.lock",
+      "uv_lock_sha256": "2cf58c7dcc41fcfce087fa48e27710de131aa746bd77da492b181b48129b2965",
+      "uv_lock_source": "HEAD:uv.lock"
+    },
+    "femx_geometry_extension": {
+      "kind": "two aluminum top-contact vias for a future current solve",
+      "part_of_public_source": false
+    },
+    "figure_rendering": {
+      "matplotlib_version": "3.11.1",
+      "mode": "retained-open-csv-tables",
+      "numpy_version": "2.4.6",
+      "python_version": "3.13.13"
+    },
+    "gmsh": {
+      "canonical_mesh_sha256": "6b577d9ab996eab4570bda24c21d2cd8412eb684f2cd2f1992686c51c7588163",
+      "executable_sha256": "08d91cc9ce7244999950c4fa1165b42ec9132e21194faec32e4f2dc109e1682c",
+      "geometry_sha256": "b1aed7e14fd07b593fcff9cf7eab3dee6023415848af66cdf00da6d5975dc201",
+      "import_record_sha256": "f6aca7393ca79e5ff2d820b199876caa1f2df480066d6ce91ee5ffbd568985cd",
+      "mesh_report_sha256": "fc7766ed8c621c836593d4342afa5f17f3be420738b84c493f307959b6a2824b",
+      "process_succeeded": true,
+      "recipe_sha256": "d11fa5ac9e6a654af3ab18debd855b269125999c3612535c9698cb0362a72d4d",
+      "source_msh_sha256": "92189a8903aac73e8fd37f45387a449751441373b65f892ab1c4f01e0d7875a8",
+      "version": "4.12.1"
+    },
+    "jax": {
+      "backend": "cpu",
+      "device_count": 1,
+      "device_kind": "cpu",
+      "float64": true,
+      "forward_plan_sha256": "dbea5326ff885c96e5e6d744208eed91e4cf3792d47d0286d915b246292f6909",
+      "jaxlib_version": "0.10.1",
+      "potential_sha256_float64": "b079ac2d358dca5ccc89ac7ffea0be0957ab060374dcf740f9335189e408471b",
+      "temperature_sha256_float64": "3f1ec2bf5ed77b2047233b17a08185b80e551ffed6b30f3743b00b668630a93a",
+      "version": "0.10.1"
+    },
+    "model": {
+      "boundary_conditions": {
+        "bottom_temperature": "300 K",
+        "lateral_adiabatic": "zero_normal_heat_flux",
+        "top_convection_and_terminals": "h=10 W m^-2 K^-1 at 300 K"
+      },
+      "coordinate_unit": "m in solver data; um in figure axes",
+      "dimension": 3,
+      "electrical_space": "TiN plus two femx aluminum contacts",
+      "element": "first-order affine Tet4 H1/P1",
+      "fabricated_device_prediction_claimed": false,
+      "field_evaluation": "direct native JAX and external Elmer solves at the recorded target voltage; no temperature or parity field is obtained by algebraic rescaling",
+      "field_evidence": {
+        "algebraic_field_rescaling_used": false,
+        "claim_scope": "direct same-discretization solver parity at the selected current; not a thermal-domain correction, material calibration, or fabricated-device claim",
+        "elmer_target_solve": "retained external solve at the recorded target voltage",
+        "evidence_tier": "direct_jax_elmer_same_mesh_solve",
+        "jax_target_solve": "retained native solve at the recorded target voltage",
+        "operating_point_selection_tier": "source_pinned_parity"
+      },
+      "joule_transfer": "exact parent-cell identity",
+      "material_status": "source-pinned public benchmark; not foundry calibrated",
+      "mesh_convergence_claimed": false,
+      "operating_point": {
+        "assumptions": [
+          "linear temperature-independent electrical conductivity",
+          "constant thermal conductivity and linear thermal boundaries"
+        ],
+        "claim_scope": "source-pinned current for same-discretization parity; not a recommended or calibrated fabricated-device operating point",
+        "current_and_voltage_scale": 1.0,
+        "evidence_tier": "source_pinned_parity",
+        "joule_power_and_temperature_rise_scale": 1.0,
+        "name": "source_reproduction",
+        "schema_version": "femx.public-ring-heater-operating-point/v1",
+        "source_reproduction_current_A": 0.015,
+        "target_current_A": 0.015
+      },
+      "profile": "coarse",
+      "same_discretization_parity_claimed": true,
+      "thermal_space": "all eight material volumes"
+    },
+    "public_source": {
+      "kind": "independent reconstruction of published dimensions",
+      "notebook_sha256": "4ed3c6dbd8021d40ba03a5d44bdad5f684e60f3732118a0ba11bf8e4669550d6",
+      "page": "https://www.flexcompute.com/tidy3d/examples/notebooks/ThermallyTunedRingResonator/",
+      "repository": "https://github.com/flexcompute/tidy3d-notebooks",
+      "revision": "c37c785d52e9258c9d048a781524b8e8d7c758ca"
+    },
+    "raw_run_artifacts": {
+      "contains": [
+        "GEO and MSH",
+        "Gmsh stdout and stderr",
+        "Elmer native mesh and SIF",
+        "Elmer indexed result and VTU",
+        "Elmer stdout and stderr"
+      ],
+      "relative_root": ".femx/readme-3d-ring-heater/",
+      "retained_outside_git": true,
+      "run_id": "d11fa5ac9e6a654a-attempt-003"
+    },
+    "timing_seconds": {
+      "elmer": 1.0050405279907864,
+      "gmsh": 0.49746143899392337,
+      "jax_target": 0.4944545470061712,
+      "jax_unit_including_compile": 0.9996326560067246
+    }
+  },
+  "run_id": "3d-ring-heater-run-12f460bc7fc6db4f",
+  "schema_version": "femx.figure.3d-ring-heater-reference/v2",
+  "status": {
+    "elmer_convergence": "converged",
+    "elmer_process": "succeeded",
+    "gmsh_process": "succeeded",
+    "jax_target_solve": "numerically_admitted",
+    "jax_unit_solve": "numerically_admitted",
+    "scientific_parity": "passed"
+  },
+  "thresholds": {
+    "jax_charge_balance_relative_error": 1e-07,
+    "jax_electrical_energy_relative_error": 1e-10,
+    "jax_joule_transfer_relative_error": 1e-12,
+    "jax_thermal_balance_relative_error": 1e-10,
+    "maximum_absolute_potential_difference_V": 2e-08,
+    "maximum_absolute_temperature_difference_K": 2e-05,
+    "relative_l2_potential_difference": 1e-08,
+    "relative_l2_temperature_rise_difference": 1e-08,
+    "target_current_relative_error": 1e-10
+  }
+}

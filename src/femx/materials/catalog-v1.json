@@ -1,0 +1,863 @@
+{
+  "schema_version": "femx.material_catalog/v1",
+  "catalog_id": "femx.siph.materials",
+  "catalog_version": "2026-08-30.1",
+  "citations": [
+    {
+      "id": "malitson1965",
+      "authors": ["I. H. Malitson"],
+      "title": "Interspecimen Comparison of the Refractive Index of Fused Silica",
+      "container": "Journal of the Optical Society of America 55(10), 1205",
+      "year": 1965,
+      "doi": "10.1364/JOSA.55.001205",
+      "url": "https://doi.org/10.1364/JOSA.55.001205",
+      "locator": "Sellmeier equation; measurements at 20 degC over 0.21-3.71 um"
+    },
+    {
+      "id": "li1980",
+      "authors": ["H. H. Li"],
+      "title": "Refractive index of silicon and germanium and its wavelength and temperature derivatives",
+      "container": "Journal of Physical and Chemical Reference Data 9(3), 561-658",
+      "year": 1980,
+      "doi": "10.1063/1.555624",
+      "url": "https://doi.org/10.1063/1.555624",
+      "locator": "Recommended transparent-region Si and Ge dispersion and temperature derivatives"
+    },
+    {
+      "id": "green2008",
+      "authors": ["Martin A. Green"],
+      "title": "Self-consistent optical parameters of intrinsic silicon at 300 K including temperature coefficients",
+      "container": "Solar Energy Materials and Solar Cells 92(11), 1305-1310",
+      "year": 2008,
+      "doi": "10.1016/j.solmat.2008.06.009",
+      "url": "https://doi.org/10.1016/j.solmat.2008.06.009",
+      "locator": "Intrinsic-Si tables at 300 K over 0.25-1.45 um"
+    },
+    {
+      "id": "cocorullo1999",
+      "authors": ["G. Cocorullo", "F. G. Della Corte", "I. Rendina"],
+      "title": "Temperature dependence of the thermo-optic coefficient in crystalline silicon between room temperature and 550 K at the wavelength of 1523 nm",
+      "container": "Applied Physics Letters 74(22), 3338-3340",
+      "year": 1999,
+      "doi": "10.1063/1.123337",
+      "url": "https://doi.org/10.1063/1.123337",
+      "locator": "Crystalline Si, 1523 nm, 300-550 K"
+    },
+    {
+      "id": "glassbrenner_slack1964",
+      "authors": ["C. J. Glassbrenner", "Glen A. Slack"],
+      "title": "Thermal Conductivity of Silicon and Germanium from 3 K to the Melting Point",
+      "container": "Physical Review 134(4A), A1058-A1069",
+      "year": 1964,
+      "doi": "10.1103/PhysRev.134.A1058",
+      "url": "https://doi.org/10.1103/PhysRev.134.A1058",
+      "locator": "Single-crystal Si and Ge thermal conductivity"
+    },
+    {
+      "id": "nist_janaf_si1998",
+      "authors": ["National Institute of Standards and Technology"],
+      "title": "NIST-JANAF Thermochemical Tables, Fourth Edition: Silicon",
+      "container": "NIST-JANAF Thermochemical Tables, Fourth Edition",
+      "year": 1998,
+      "doi": null,
+      "url": "https://janaf.nist.gov/pdf/JANAF-FourthEd-1998-Silicon.pdf",
+      "locator": "Official Silicon element tables; phase and temperature must be selected explicitly"
+    },
+    {
+      "id": "masetti1983",
+      "authors": ["G. Masetti", "M. Severi", "S. Solmi"],
+      "title": "Modeling of carrier mobility against carrier concentration in arsenic-, phosphorus-, and boron-doped silicon",
+      "container": "IEEE Transactions on Electron Devices 30(7), 764-769",
+      "year": 1983,
+      "doi": "10.1109/T-ED.1983.21207",
+      "url": "https://doi.org/10.1109/T-ED.1983.21207",
+      "locator": "Dopant-species-specific mobility versus carrier concentration"
+    },
+    {
+      "id": "soref_bennett1987",
+      "authors": ["R. Soref", "B. Bennett"],
+      "title": "Electrooptical effects in silicon",
+      "container": "IEEE Journal of Quantum Electronics 23(1), 123-129",
+      "year": 1987,
+      "doi": "10.1109/JQE.1987.1073206",
+      "url": "https://doi.org/10.1109/JQE.1987.1073206",
+      "locator": "Free-carrier plasma-dispersion and absorption relations"
+    },
+    {
+      "id": "rakic1998",
+      "authors": ["Aleksandar D. Rakic", "Aleksandra B. Djurisic", "Jovan M. Elazar", "Marian L. Majewski"],
+      "title": "Optical properties of metallic films for vertical-cavity optoelectronic devices",
+      "container": "Applied Optics 37(22), 5271",
+      "year": 1998,
+      "doi": "10.1364/AO.37.005271",
+      "url": "https://doi.org/10.1364/AO.37.005271",
+      "locator": "Lorentz-Drude and Brendel-Bormann film models for Al, Cu, and Ti over 0.1-6 eV"
+    },
+    {
+      "id": "hust_lankford1984",
+      "authors": ["J. G. Hust", "A. B. Lankford"],
+      "title": "Thermal conductivity of aluminum, copper, iron, and tungsten for temperatures from 1 K to the melting point",
+      "container": "National Bureau of Standards Interagency Report NBSIR 84-3007",
+      "year": 1984,
+      "doi": "10.6028/NBS.IR.84-3007",
+      "url": "https://doi.org/10.6028/NBS.IR.84-3007",
+      "locator": "Recommended bulk Al and Cu thermal-conductivity correlations"
+    },
+    {
+      "id": "nist_alloy_data2019",
+      "authors": ["National Institute of Standards and Technology"],
+      "title": "NIST alloy data",
+      "container": "NIST Public Data Repository, mds2-2153",
+      "year": 2019,
+      "doi": "10.18434/M32153",
+      "url": "https://data.nist.gov/od/id/mds2-2153",
+      "locator": "Unary-metal resistivity and thermophysical records; retain each point's specimen, process, uncertainty, and original citation"
+    },
+    {
+      "id": "powell_tye1961",
+      "authors": ["R. W. Powell", "R. P. Tye"],
+      "title": "The thermal and electrical conductivity of titanium and its alloys",
+      "container": "Journal of the Less Common Metals 3(3), 226-233",
+      "year": 1961,
+      "doi": "10.1016/0022-5088(61)90064-9",
+      "url": "https://doi.org/10.1016/0022-5088(61)90064-9",
+      "locator": "Titanium specimen thermal and electrical conductivity"
+    },
+    {
+      "id": "taylor_morreale1964",
+      "authors": ["R. E. Taylor", "J. Morreale"],
+      "title": "Thermal Conductivity of Titanium Carbide, Zirconium Carbide, and Titanium Nitride at High Temperatures",
+      "container": "Journal of the American Ceramic Society 47(2), 69-73",
+      "year": 1964,
+      "doi": "10.1111/j.1151-2916.1964.tb15657.x",
+      "url": "https://doi.org/10.1111/j.1151-2916.1964.tb15657.x",
+      "locator": "TiN thermal-conductivity measurements over 200-2000 degC"
+    },
+    {
+      "id": "kearney2018",
+      "authors": ["B. T. Kearney", "B. Jugdersuren", "J. C. Culbertson", "P. A. Desario", "Xiao Liu"],
+      "title": "Substrate and annealing temperature dependent electrical resistivity of sputtered titanium nitride thin films",
+      "container": "Thin Solid Films 661, 78-83",
+      "year": 2018,
+      "doi": "10.1016/j.tsf.2018.07.001",
+      "url": "https://doi.org/10.1016/j.tsf.2018.07.001",
+      "locator": "Sputtered TiN resistivity with explicit substrate and annealing dependence"
+    },
+    {
+      "id": "reddy2017",
+      "authors": ["Harsha Reddy", "Urcan Guler", "Zhaxylyk Kudyshev", "Alexander V. Kildishev", "Vladimir M. Shalaev", "Alexandra Boltasseva"],
+      "title": "Temperature-Dependent Optical Properties of Plasmonic Titanium Nitride Thin Films",
+      "container": "ACS Photonics 4(6), 1413-1420",
+      "year": 2017,
+      "doi": "10.1021/acsphotonics.7b00127",
+      "url": "https://doi.org/10.1021/acsphotonics.7b00127",
+      "locator": "Process-specific TiN thin-film optical data over 330-2000 nm through 900 degC"
+    },
+    {
+      "id": "nist_scd_z00752",
+      "authors": ["B. F. Naylor", "National Institute of Standards and Technology (evaluation)"],
+      "title": "High-Temperature Heat Contents of Titanium Carbide and Titanium Nitride; evaluated TiN record Z00752",
+      "container": "NIST Structural Ceramics Database, Standard Reference Database 30",
+      "year": 2015,
+      "doi": "10.18434/T4F30D",
+      "url": "https://srdata.nist.gov/CeramicDataPortal/Scd/Z00752",
+      "locator": "TiN material 2: 99.6 percent TiN sample, density 5.24 g/cm3, qualified Cp table at 300-1800 K, accessed 2026-08-30"
+    },
+    {
+      "id": "nunley2016",
+      "authors": ["Timothy Nathan Nunley", "Nalin S. Fernando", "Nuwanjula Samarasingha", "Jaime M. Moya", "Cayla M. Nelson", "Amber A. Medina", "Stefan Zollner"],
+      "title": "Optical constants of germanium and thermally grown germanium dioxide from 0.5 to 6.6 eV via a multisample ellipsometry investigation",
+      "container": "Journal of Vacuum Science and Technology B 34(6), 061205",
+      "year": 2016,
+      "doi": "10.1116/1.4963075",
+      "url": "https://doi.org/10.1116/1.4963075",
+      "locator": "Complex Ge and GeO2 optical constants over 0.5-6.6 eV"
+    },
+    {
+      "id": "herzinger1998",
+      "authors": ["C. M. Herzinger", "B. Johs", "W. A. McGahan", "J. A. Woollam", "W. Paulson"],
+      "title": "Ellipsometric determination of optical constants for silicon and thermally grown silicon dioxide via a multi-sample, multi-wavelength, multi-angle investigation",
+      "container": "Journal of Applied Physics 83(6), 3323-3336",
+      "year": 1998,
+      "doi": "10.1063/1.367101",
+      "url": "https://doi.org/10.1063/1.367101",
+      "locator": "Thermally grown SiO2 must not be substituted silently with fused silica"
+    }
+  ],
+  "materials": [
+    {
+      "id": "si_crystalline_intrinsic",
+      "name": "Crystalline intrinsic silicon",
+      "formula": "Si",
+      "phase": "solid crystalline",
+      "form": "bulk single-crystal reference",
+      "process": "Intrinsic reference; orientation, residual carriers, stress, and foundry stack remain explicit calibration inputs",
+      "aliases": ["intrinsic silicon", "c-Si"],
+      "properties": [
+        {
+          "id": "optical.refractive_index.li1980",
+          "quantity": "refractive_index",
+          "unit": "1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": {"minimum": 100.0, "maximum": 740.0},
+            "vacuum_wavelength_m": {"minimum": 1.2e-6, "maximum": 1.4e-5},
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Transparent-region model; it is not a complex absorption model"]
+          },
+          "citation_ids": ["li1980"],
+          "uncertainty": null,
+          "notes": ["Coefficients are intentionally not executable until independently transcribed and regression-tested against the primary paper"]
+        },
+        {
+          "id": "optical.complex_index.green2008",
+          "quantity": "complex_refractive_index",
+          "unit": "1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": {"minimum": 300.0, "maximum": 300.0},
+            "vacuum_wavelength_m": {"minimum": 2.5e-7, "maximum": 1.45e-6},
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["The tabulation stops below the 1.55 um telecom wavelength"]
+          },
+          "citation_ids": ["green2008"],
+          "uncertainty": null,
+          "notes": ["Do not extrapolate the 1.45 um endpoint to 1.55 um"]
+        },
+        {
+          "id": "optical.thermo_optic.li1980",
+          "quantity": "thermo_optic_coefficient",
+          "unit": "K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": {"minimum": 100.0, "maximum": 740.0},
+            "vacuum_wavelength_m": {"minimum": 1.2e-6, "maximum": 1.4e-5},
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Derivative of the transparent-region dispersion relation"]
+          },
+          "citation_ids": ["li1980"],
+          "uncertainty": null,
+          "notes": ["No universal 1.55 um scalar is installed"]
+        },
+        {
+          "id": "optical.thermo_optic.cocorullo1999",
+          "quantity": "thermo_optic_coefficient",
+          "unit": "K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": {"minimum": 300.0, "maximum": 550.0},
+            "vacuum_wavelength_m": {"minimum": 1.523e-6, "maximum": 1.523e-6},
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Wavelength is exactly the reported 1523 nm"]
+          },
+          "citation_ids": ["cocorullo1999"],
+          "uncertainty": null,
+          "notes": ["The commonly repeated 1.55 um constant is not substituted for this temperature-dependent source"]
+        },
+        {
+          "id": "thermal.conductivity.glassbrenner_slack1964",
+          "quantity": "thermal_conductivity",
+          "unit": "W m^-1 K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Source spans 3 K to the melting point; crystal and specimen conditions must be retained"]
+          },
+          "citation_ids": ["glassbrenner_slack1964"],
+          "uncertainty": null,
+          "notes": ["Thin-film and nanostructure boundary scattering require a separate calibrated model"]
+        },
+        {
+          "id": "thermal.heat_capacity.nist_janaf1998",
+          "quantity": "specific_heat_capacity",
+          "unit": "J kg^-1 K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Select the crystalline phase and valid JANAF interval explicitly"]
+          },
+          "citation_ids": ["nist_janaf_si1998"],
+          "uncertainty": null,
+          "notes": ["Molar-to-mass conversion and interpolation are not silently chosen in v1"]
+        }
+      ],
+      "notes": ["This record excludes doped silicon, amorphous silicon, and polycrystalline silicon"]
+    },
+    {
+      "id": "sio2_fused",
+      "name": "Fused silica",
+      "formula": "SiO2",
+      "phase": "amorphous solid",
+      "form": "fused-silica optical specimens",
+      "process": "Malitson interspecimen optical reference at 20 degC",
+      "aliases": ["fused silica"],
+      "properties": [
+        {
+          "id": "optical.refractive_index.malitson1965",
+          "quantity": "refractive_index",
+          "unit": "1",
+          "status": "executable",
+          "model": {
+            "kind": "sellmeier",
+            "parameters": [
+              {"name": "b", "value": [0.6961663, 0.4079426, 0.8974794]},
+              {"name": "resonance_wavelength_um", "value": [0.0684043, 0.1162414, 9.896161]}
+            ]
+          },
+          "validity": {
+            "temperature_k": {"minimum": 293.15, "maximum": 293.15},
+            "vacuum_wavelength_m": {"minimum": 2.1e-7, "maximum": 3.71e-6},
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Vacuum wavelength is converted to micrometres before evaluating the published Sellmeier equation"]
+          },
+          "citation_ids": ["malitson1965"],
+          "uncertainty": "Reported absolute residual 10.5e-6 in refractive index",
+          "notes": ["This is not a thermal-oxide process model"]
+        }
+      ],
+      "notes": ["Fused silica and thermally grown SiO2 are separate catalog records"]
+    },
+    {
+      "id": "sio2_thermal",
+      "name": "Thermally grown silicon dioxide",
+      "formula": "SiO2",
+      "phase": "amorphous solid",
+      "form": "oxide film on silicon",
+      "process": "Thermally grown; furnace recipe, density, stress, and interface remain foundry inputs",
+      "aliases": ["thermal oxide", "thermally grown SiO2"],
+      "properties": [
+        {
+          "id": "optical.complex_index.herzinger1998",
+          "quantity": "complex_refractive_index",
+          "unit": "1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Use the paper's multisample ellipsometric model and specimen conditions"]
+          },
+          "citation_ids": ["herzinger1998"],
+          "uncertainty": null,
+          "notes": ["The fused-silica Sellmeier model is not an automatic fallback"]
+        }
+      ],
+      "notes": ["A foundry oxide stack requires process-specific calibration"]
+    },
+    {
+      "id": "ge_crystalline",
+      "name": "Crystalline germanium",
+      "formula": "Ge",
+      "phase": "solid crystalline",
+      "form": "bulk and ellipsometric reference specimens",
+      "process": "Property-specific reference; epitaxy, strain, doping, and absorption remain explicit",
+      "aliases": ["crystalline germanium", "c-Ge"],
+      "properties": [
+        {
+          "id": "optical.refractive_index.li1980",
+          "quantity": "refractive_index",
+          "unit": "1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": {"minimum": 100.0, "maximum": 550.0},
+            "vacuum_wavelength_m": {"minimum": 1.9e-6, "maximum": 1.6e-5},
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Transparent-region recommendation starts at 1.9 um"]
+          },
+          "citation_ids": ["li1980"],
+          "uncertainty": null,
+          "notes": ["This model must not be used as a lossless 1.55 um germanium model"]
+        },
+        {
+          "id": "optical.complex_index.nunley2016",
+          "quantity": "complex_refractive_index",
+          "unit": "1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": {"minimum": 0.5, "maximum": 6.6},
+            "notes": ["Complex ellipsometric data include the 1.55 um photon energy"]
+          },
+          "citation_ids": ["nunley2016"],
+          "uncertainty": null,
+          "notes": ["Transcription of the complex dielectric model remains a separate verified change"]
+        },
+        {
+          "id": "thermal.conductivity.glassbrenner_slack1964",
+          "quantity": "thermal_conductivity",
+          "unit": "W m^-1 K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Source spans 3 K to the melting point"]
+          },
+          "citation_ids": ["glassbrenner_slack1964"],
+          "uncertainty": null,
+          "notes": ["Epitaxial thin-film thermal conductivity requires separate evidence"]
+        }
+      ],
+      "notes": ["Telecom Ge is absorptive; the transparent Li model is range-guarded above 1.9 um"]
+    },
+    {
+      "id": "al_reference",
+      "name": "Aluminum reference family",
+      "formula": "Al",
+      "phase": "solid metal",
+      "form": "bulk thermophysical and deposited-film optical references",
+      "process": "Property-specific specimen; film thickness, grain structure, purity, and interfaces require calibration",
+      "aliases": ["aluminum reference", "aluminium reference"],
+      "properties": [
+        {
+          "id": "optical.dielectric.rakic1998",
+          "quantity": "complex_relative_permittivity",
+          "unit": "1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": {"minimum": 0.1, "maximum": 6.0},
+            "notes": ["Choose the paper's LD or BB model explicitly"]
+          },
+          "citation_ids": ["rakic1998"],
+          "uncertainty": null,
+          "notes": ["Deposited foundry metal must be compared against process metrology"]
+        },
+        {
+          "id": "thermal.conductivity.hust_lankford1984",
+          "quantity": "thermal_conductivity",
+          "unit": "W m^-1 K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Bulk recommendation from 1 K to the material melting point"]
+          },
+          "citation_ids": ["hust_lankford1984"],
+          "uncertainty": null,
+          "notes": ["Do not apply bulk conductivity silently to a nanoscale interconnect"]
+        },
+        {
+          "id": "electrical.resistivity.nist_alloy_data2019",
+          "quantity": "electrical_resistivity",
+          "unit": "ohm m",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Select one unary-Al record and retain its purity, process, temperature, uncertainty, and original citation"]
+          },
+          "citation_ids": ["nist_alloy_data2019"],
+          "uncertainty": null,
+          "notes": ["No database point is promoted to a universal deposited-Al value"]
+        }
+      ],
+      "notes": ["Optical-film and bulk-thermal records share chemistry but not specimen identity"]
+    },
+    {
+      "id": "cu_reference",
+      "name": "Copper reference family",
+      "formula": "Cu",
+      "phase": "solid metal",
+      "form": "bulk thermophysical and deposited-film optical references",
+      "process": "Property-specific specimen; purity, grain size, liner, surface, and thickness require calibration",
+      "aliases": ["copper reference"],
+      "properties": [
+        {
+          "id": "optical.dielectric.rakic1998",
+          "quantity": "complex_relative_permittivity",
+          "unit": "1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": {"minimum": 0.1, "maximum": 6.0},
+            "notes": ["Choose the paper's LD or BB model explicitly"]
+          },
+          "citation_ids": ["rakic1998"],
+          "uncertainty": null,
+          "notes": ["Oxidation and deposited-film microstructure are not represented by a universal constant"]
+        },
+        {
+          "id": "thermal.conductivity.hust_lankford1984",
+          "quantity": "thermal_conductivity",
+          "unit": "W m^-1 K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Bulk recommendation from 1 K to the material melting point"]
+          },
+          "citation_ids": ["hust_lankford1984"],
+          "uncertainty": null,
+          "notes": ["Interconnect size effects and barrier layers require separate calibration"]
+        },
+        {
+          "id": "electrical.resistivity.nist_alloy_data2019",
+          "quantity": "electrical_resistivity",
+          "unit": "ohm m",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Select one unary-Cu record and retain its purity, process, temperature, uncertainty, and original citation"]
+          },
+          "citation_ids": ["nist_alloy_data2019"],
+          "uncertainty": null,
+          "notes": ["No database point is promoted to a universal damascene-Cu value"]
+        }
+      ],
+      "notes": ["Optical-film and bulk-thermal records share chemistry but not specimen identity"]
+    },
+    {
+      "id": "ti_reference",
+      "name": "Titanium reference family",
+      "formula": "Ti",
+      "phase": "solid metal",
+      "form": "bulk transport and deposited-film optical references",
+      "process": "Property-specific specimen; phase, oxygen content, texture, and thickness require calibration",
+      "aliases": ["titanium reference"],
+      "properties": [
+        {
+          "id": "optical.dielectric.rakic1998",
+          "quantity": "complex_relative_permittivity",
+          "unit": "1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": {"minimum": 0.1, "maximum": 6.0},
+            "notes": ["Choose the paper's LD or BB model explicitly"]
+          },
+          "citation_ids": ["rakic1998"],
+          "uncertainty": null,
+          "notes": ["A thin adhesion layer can differ substantially from the fitted reference film"]
+        },
+        {
+          "id": "thermal.conductivity.powell_tye1961",
+          "quantity": "thermal_conductivity",
+          "unit": "W m^-1 K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Select specimen, alloy state, and temperature from the source"]
+          },
+          "citation_ids": ["powell_tye1961"],
+          "uncertainty": null,
+          "notes": ["Bulk and deposited-film titanium require distinct calibration"]
+        },
+        {
+          "id": "electrical.conductivity.powell_tye1961",
+          "quantity": "electrical_conductivity",
+          "unit": "S m^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Select specimen, alloy state, and temperature from the source"]
+          },
+          "citation_ids": ["powell_tye1961"],
+          "uncertainty": null,
+          "notes": ["Oxide, impurity, phase, and size effects require separate calibration"]
+        }
+      ],
+      "notes": ["Alpha/beta phase and impurity state must be retained in future executable records"]
+    },
+    {
+      "id": "tin_reference",
+      "name": "Titanium nitride reference family",
+      "formula": "TiN",
+      "phase": "solid ceramic/conductive nitride",
+      "form": "99.6 percent polycrystalline calorimetry sample and deposited optical thin films",
+      "process": "Property-specific source specimen; stoichiometry, deposition, anneal, thickness, and texture are mandatory metadata",
+      "aliases": ["titanium nitride reference"],
+      "properties": [
+        {
+          "id": "mass_density.nist_z00752",
+          "quantity": "mass_density",
+          "unit": "kg m^-3",
+          "status": "executable",
+          "model": {
+            "kind": "constant",
+            "parameters": [{"name": "value", "value": 5240.0}]
+          },
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Measured density of the specific 99.6 percent TiN calorimetry sample"]
+          },
+          "citation_ids": ["nist_scd_z00752"],
+          "uncertainty": null,
+          "notes": ["This is not a universal density for every sputtered TiNx film"]
+        },
+        {
+          "id": "thermal.heat_capacity.nist_z00752",
+          "quantity": "specific_heat_capacity",
+          "unit": "J kg^-1 K^-1",
+          "status": "executable",
+          "model": {
+            "kind": "linear_table",
+            "parameters": [
+              {"name": "temperature_k", "value": [300.0, 400.0, 500.0, 600.0, 700.0, 800.0, 900.0, 1000.0, 1100.0, 1200.0, 1300.0, 1400.0, 1500.0, 1600.0, 1700.0, 1800.0]},
+              {"name": "values", "value": [601.71, 705.31, 756.67, 787.48, 808.57, 824.49, 837.41, 848.45, 858.28, 867.27, 875.68, 883.66, 891.33, 898.76, 906.0, 913.11]}
+            ]
+          },
+          "validity": {
+            "temperature_k": {"minimum": 300.0, "maximum": 1800.0},
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["femx linearly interpolates the rounded NIST SI table and never extrapolates"]
+          },
+          "citation_ids": ["nist_scd_z00752"],
+          "uncertainty": "Original fitted molar heat-capacity equation states 0.5 percent relative uncertainty",
+          "notes": ["NIST evaluation status is qualified by acceptance criteria; the source sample is 99.6 percent TiN"]
+        },
+        {
+          "id": "thermal.conductivity.taylor_morreale1964",
+          "quantity": "thermal_conductivity",
+          "unit": "W m^-1 K^-1",
+          "status": "reference_only",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": {"minimum": 473.15, "maximum": 2273.15},
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Primary paper reports TiN measurements over 200-2000 degC"]
+          },
+          "citation_ids": ["taylor_morreale1964"],
+          "uncertainty": null,
+          "notes": ["High-temperature bulk/specimen data are not a room-temperature sputtered-film default"]
+        },
+        {
+          "id": "electrical.resistivity.kearney2018",
+          "quantity": "electrical_resistivity",
+          "unit": "ohm m",
+          "status": "requires_calibration",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Sputtered-film resistivity depends on substrate and annealing temperature"]
+          },
+          "citation_ids": ["kearney2018"],
+          "uncertainty": null,
+          "notes": ["A heater stack requires its own thickness, stoichiometry, anneal, geometry, and contact calibration"]
+        },
+        {
+          "id": "optical.complex_permittivity.reddy2017",
+          "quantity": "complex_relative_permittivity",
+          "unit": "1",
+          "status": "requires_calibration",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": {"minimum": 3.3e-7, "maximum": 2.0e-6},
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Source reports temperature-dependent thin-film data through 900 degC"]
+          },
+          "citation_ids": ["reddy2017"],
+          "uncertainty": null,
+          "notes": ["TiN optics are deposition-, stoichiometry-, thickness-, and temperature-sensitive; foundry calibration is mandatory"]
+        }
+      ],
+      "notes": ["No universal TiN electrical or thermal-conductivity scalar is installed"]
+    },
+    {
+      "id": "si_n_phosphorus",
+      "name": "Phosphorus-doped n-type crystalline silicon",
+      "formula": "Si:P",
+      "phase": "solid crystalline",
+      "form": "activated doped-silicon reference family",
+      "process": "Donor concentration, activation fraction, compensation, orientation, and temperature must be supplied",
+      "aliases": ["phosphorus-doped n-Si", "n-Si:P"],
+      "properties": [
+        {
+          "id": "electrical.mobility.masetti1983",
+          "quantity": "carrier_mobility",
+          "unit": "m^2 V^-1 s^-1",
+          "status": "requires_calibration",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Use the phosphorus-specific concentration model and its reported conditions"]
+          },
+          "citation_ids": ["masetti1983"],
+          "uncertainty": null,
+          "notes": ["Conductivity also requires active carrier density and charge; no default doping is assumed"]
+        },
+        {
+          "id": "optical.free_carrier.soref_bennett1987",
+          "quantity": "free_carrier_optical_perturbation",
+          "unit": "1",
+          "status": "requires_calibration",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Electron and hole concentrations plus wavelength must be explicit"]
+          },
+          "citation_ids": ["soref_bennett1987"],
+          "uncertainty": null,
+          "notes": ["Index and absorption changes are kept together as a complex optical effect"]
+        }
+      ],
+      "notes": ["This record is not interchangeable with arsenic-doped n-type silicon"]
+    },
+    {
+      "id": "si_n_arsenic",
+      "name": "Arsenic-doped n-type crystalline silicon",
+      "formula": "Si:As",
+      "phase": "solid crystalline",
+      "form": "activated doped-silicon reference family",
+      "process": "Donor concentration, activation fraction, compensation, orientation, and temperature must be supplied",
+      "aliases": ["arsenic-doped n-Si", "n-Si:As"],
+      "properties": [
+        {
+          "id": "electrical.mobility.masetti1983",
+          "quantity": "carrier_mobility",
+          "unit": "m^2 V^-1 s^-1",
+          "status": "requires_calibration",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Use the arsenic-specific concentration model and its reported conditions"]
+          },
+          "citation_ids": ["masetti1983"],
+          "uncertainty": null,
+          "notes": ["Conductivity also requires active carrier density and charge; no default doping is assumed"]
+        },
+        {
+          "id": "optical.free_carrier.soref_bennett1987",
+          "quantity": "free_carrier_optical_perturbation",
+          "unit": "1",
+          "status": "requires_calibration",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Electron and hole concentrations plus wavelength must be explicit"]
+          },
+          "citation_ids": ["soref_bennett1987"],
+          "uncertainty": null,
+          "notes": ["Index and absorption changes are kept together as a complex optical effect"]
+        }
+      ],
+      "notes": ["This record is not interchangeable with phosphorus-doped n-type silicon"]
+    },
+    {
+      "id": "si_p_boron",
+      "name": "Boron-doped p-type crystalline silicon",
+      "formula": "Si:B",
+      "phase": "solid crystalline",
+      "form": "activated doped-silicon reference family",
+      "process": "Acceptor concentration, activation fraction, compensation, orientation, and temperature must be supplied",
+      "aliases": ["boron-doped p-Si", "p-Si:B"],
+      "properties": [
+        {
+          "id": "electrical.mobility.masetti1983",
+          "quantity": "carrier_mobility",
+          "unit": "m^2 V^-1 s^-1",
+          "status": "requires_calibration",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Use the boron-specific concentration model and its reported conditions"]
+          },
+          "citation_ids": ["masetti1983"],
+          "uncertainty": null,
+          "notes": ["Conductivity also requires active carrier density and charge; no default doping is assumed"]
+        },
+        {
+          "id": "optical.free_carrier.soref_bennett1987",
+          "quantity": "free_carrier_optical_perturbation",
+          "unit": "1",
+          "status": "requires_calibration",
+          "model": {"kind": "reference", "parameters": []},
+          "validity": {
+            "temperature_k": null,
+            "vacuum_wavelength_m": null,
+            "carrier_concentration_m3": null,
+            "photon_energy_ev": null,
+            "notes": ["Electron and hole concentrations plus wavelength must be explicit"]
+          },
+          "citation_ids": ["soref_bennett1987"],
+          "uncertainty": null,
+          "notes": ["Index and absorption changes are kept together as a complex optical effect"]
+        }
+      ],
+      "notes": ["p-type and n-type silicon are distinct material records"]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "repo_notes": [
+    {
+      "content": "Generate a public-facing wiki from this checked-in public repository only. Use only files, directories, commands, APIs, and claims that are present in the indexed tree. Do not infer or mention private or internal repositories, omitted documentation, sibling development checkouts, local machine paths, cloud resource names, institutional affiliations, unpublished work, or restricted data. If prose refers to a path that is absent from the public tree, do not create a page for it or treat it as available documentation.",
+      "author": "femx maintainers"
+    },
+    {
+      "content": "Write for scientific Python users and contributors who may know finite elements or photonics but not femx. Lead each page with what the reader can accomplish, define specialized terms on first use, prefer short sections and concrete source links, and avoid repeating the README. Use diagrams only for a user-facing numerical or data flow that is directly supported by the public source.",
+      "author": "femx maintainers"
+    },
+    {
+      "content": "Preserve femx claim boundaries. Keep process completion, numerical convergence, cross-solver agreement, scientific validation, accelerator execution, performance, and fabricated-device prediction separate. Describe retained JSON, CSV, SVG, and PNG bundles as checked-in evidence snapshots rather than fresh executions. Never generalize a bounded CPU or TPU witness beyond its recorded topology, precision, mesh, equations, and validation scope.",
+      "author": "femx maintainers"
+    },
+    {
+      "content": "Present the public package as the product. Explain scripts and tests only where they help a reader reproduce an example, understand validation, or contribute safely. Keep optional external tools explicit: Elmer, Gmsh, and FDTDX are separately installed projects and are not vendored by femx. Do not invent installation commands or compatibility claims beyond README.md, pyproject.toml, CONTRIBUTING.md, and the checked-in public documentation.",
+      "author": "femx maintainers"
+    }
+  ],
+  "pages": [
+    {
+      "title": "FEMx Overview",
+      "purpose": "Give a concise reader-first introduction using README.md, pyproject.toml, src/femx/__init__.py, and src/femx/cli.py. Explain the solver-neutral differentiable multiphysics goal, the current public capability table, the research-preview status, and the boundary between software verification and device prediction. Link readers to the next relevant wiki pages instead of reproducing the full README.",
+      "parent": null
+    },
+    {
+      "title": "Install and Run FEMx",
+      "purpose": "Document only installation and first-run commands supported by README.md, pyproject.toml, Makefile, and src/femx/cli.py. Explain the Python range, uv workflow, optional extras, femx doctor, portable tests, and which workflows additionally require separately installed Gmsh, Elmer, JAX, or FDTDX. Clearly distinguish portable commands from optional external execution.",
+      "parent": null
+    },
+    {
+      "title": "Public Architecture",
+      "purpose": "Derive a clear architecture overview directly from the directories and source files present in the public tree, especially src/femx/core, mesh, meshing, forms, materials, physics, backends, workflows, interop, artifacts, validation, applications, runtime.py, and cli.py. Show dependency direction and the prepare-to-solve-to-evidence flow, but do not rely on absent internal architecture documents or infer components that are not checked in.",
+      "parent": null
+    },
+    {
+      "title": "Core Data Model",
+      "purpose": "Explain the public prepare-and-solve lifecycle through src/femx/core/problem.py, parameters.py, execution.py, solution.py, src/femx/runtime.py, and src/femx/backends/protocol.py. Show how Problems, execution requests, prepared payloads, Solutions, convergence information, and backend capabilities relate without exposing or inventing internal repository concepts.",
+      "parent": "Public Architecture"
+    },
+    {
+      "title": "Physics and Workflows",
+      "purpose": "Orient readers to the implemented public physics under src/femx/physics and the composition code under src/femx/workflows. Use the electrical conduction to Joule heating to thermal transport to thermo-optic update flow as the organizing thread. Keep implemented subsets and planned capabilities visibly separate.",
+      "parent": "Public Architecture"
+    },
+    {
+      "title": "Steady Current, Joule Heating, and Heat",
+      "purpose": "Explain the equations, boundary inputs, observables, and supported finite-element subsets using src/femx/physics/steady_current.py, steady_heat.py, docs/physics/STEADY_CURRENT_H1.md, docs/physics/STEADY_HEAT_H1.md, and the corresponding JAX and Elmer backend modules. Clarify units, P1 fields, Joule power, residuals, and balance checks.",
+      "parent": "Physics and Workflows"
+    },
+    {
+      "title": "Electrothermal Coupling and Differentiation",
+      "purpose": "Document one-way and self-consistent electrothermal composition using src/femx/workflows/electrothermal.py, src/femx/backends/jax/electrothermal.py, self_consistent.py, distributed_electrothermal.py, and docs/physics/ELECTROTHERMAL_COUPLING.md. Explain residual-defined adjoints and finite-difference checks while keeping 2D, 3D, serial, and distributed evidence scopes distinct.",
+      "parent": "Physics and Workflows"
+    },
+    {
+      "title": "Waveguide Ports and Eigenmodes",
+      "purpose": "Explain the documented lossless PEC port-mode subset using src/femx/physics/port_eigenmode.py, docs/physics/NEDELEC_TRIANGLE.md, PORT_OPERATOR.md, PORT_EIGENSOLVER.md, and PORT_EIGENMODE.md. Cover edge orientation, mixed spaces, propagation constants, E and H reconstruction, power normalization, simple-mode adjoints, and invariant cluster quantities without implying open-boundary or all-mode support.",
+      "parent": "Physics and Workflows"
+    },
+    {
+      "title": "Meshing and Materials",
+      "purpose": "Introduce the public mesh, function-space, physical-tag, and material-record concepts using src/femx/mesh, src/femx/forms, and src/femx/materials. Emphasize that topology, geometry, spaces, and degrees of freedom remain distinct and that material records carry provenance and validity rather than universal defaults.",
+      "parent": "Public Architecture"
+    },
+    {
+      "title": "Gmsh Geometry and Mesh Ingestion",
+      "purpose": "Document the guarded public Gmsh path using src/femx/meshing/gmsh, especially importer.py, runner.py, recipes.py, ring_heater.py, and ring_heater_quality.py. Explain canonical mesh ingestion, orientation, semantic tags, deterministic recipes, quality reports, external-execution authorization, and what meshing checks do not prove.",
+      "parent": "Meshing and Materials"
+    },
+    {
+      "title": "Material Records and Validity",
+      "purpose": "Guide readers through docs/MATERIALS.md, src/femx/materials/catalog.py, catalog-v1.json, and elmer.py. Explain executable, reference-only, requires-calibration, and legacy-unverified statuses; show safe catalog evaluation; and state why literature or compatibility values are not automatic foundry-calibrated inputs.",
+      "parent": "Meshing and Materials"
+    },
+    {
+      "title": "Solver Backends",
+      "purpose": "Explain how the public JAX and Elmer implementations satisfy shared backend contracts while keeping numerical strategies explicit. Use src/femx/backends/protocol.py and registry.py as the common entry point, then direct readers to the backend-specific child pages. Do not present experimental helpers as registered production capabilities.",
+      "parent": "Public Architecture"
+    },
+    {
+      "title": "JAX Backend and Distributed Execution",
+      "purpose": "Document the public JAX finite-element kernels, solvers, autodiff boundaries, owned-and-ghost layouts, collectives, and experimental distributed paths under src/femx/backends/jax. Separate serial CPU support, forced-device portability tests, and retained physical multi-process TPU evidence. Do not turn compiler estimates or one bounded run into speedup, scaling, or live-memory claims.",
+      "parent": "Solver Backends"
+    },
+    {
+      "title": "Elmer Reference Backend",
+      "purpose": "Document src/femx/backends/elmer as an independently executed reference path: deterministic lowering, explicit authorization, external process invocation, result parsing, convergence reporting, and same-mesh comparisons. State that Elmer is installed separately, is not vendored, and that matching one discrete problem is not universal solver or device validation.",
+      "parent": "Solver Backends"
+    },
+    {
+      "title": "FDTDX Interoperability",
+      "purpose": "Explain docs/INTEROPERABILITY.md and src/femx/interop/fdtdx as explicit conversion and handoff contracts. Cover FEM-to-Yee sampling, complex E and eta0_H conventions, phase and power normalization, HDF5 mode bundles, thermo-optic material transfer, source and detector boundaries, differentiation limits, and distributed sharding without treating FEM coefficients as FDTD fields.",
+      "parent": "Public Architecture"
+    },
+    {
+      "title": "3D Ring-Heater Walkthrough",
+      "purpose": "Build a readable end-to-end walkthrough from src/femx/applications/ring_heater.py, src/femx/meshing/gmsh/ring_heater.py, examples/readme_3d_ring_heater_reference.py, examples/README.md, docs/physics/PUBLIC_RING_HEATER_THERMAL_SCOPE.md, and the two 3D ring-heater evidence bundles. Explain geometry, current, Joule heating, steady heat, the direct 5 mA JAX-Elmer comparison, the 15 mA source-reproduction role, mesh sensitivity, thermal-envelope sensitivity, and every device-representativeness limitation.",
+      "parent": null
+    },
+    {
+      "title": "Verification, Evidence, and Reproducibility",
+      "purpose": "Explain how public tests, src/femx/artifacts, src/femx/validation, scripts, and docs/assets/readme support reproducibility. Distinguish unit, architecture, contract, integration, and scientific tests; explain manifests, hashes, checked-in projections, and opt-in prerequisites; and make clear that a static evidence artifact is not automatically recomputed by ordinary CI.",
+      "parent": null
+    },
+    {
+      "title": "Examples, Tests, and Contributions",
+      "purpose": "Help contributors navigate examples/README.md, CONTRIBUTING.md, Makefile, .github/workflows/ci.yml, scripts, and tests. Show the smallest useful examples, the portable quality gate, test markers and honest skips, documentation expectations, and where to add tests for a changed public behavior. Do not document absent internal governance files or private deployment workflows.",
+      "parent": null
+    }
+  ]
+}

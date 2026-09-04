@@ -1,0 +1,114 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "femx"
+version = "0.1.0.dev0"
+description = "A solver-neutral finite-element harness for differentiable multiphysics"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+license = { file = "LICENSE" }
+authors = [{ name = "Yosep Kim" }]
+keywords = ["finite-elements", "jax", "multiphysics", "photonics", "elmer"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+artifacts = ["h5py>=3.16,<4", "numpy>=2.0,<2.5"]
+elmer = ["numpy>=2.0,<2.5"]
+jax = ["jax==0.10.1", "numpy>=2.0,<2.5"]
+meshing = ["numpy>=2.0,<2.5"]
+
+[project.scripts]
+femx = "femx.cli:main"
+
+[project.urls]
+Repository = "https://github.com/yspkm/femx"
+
+[dependency-groups]
+dev = [
+  "build>=1.2.2",
+  "hatchling>=1.27",
+  "h5py>=3.16,<4",
+  "hypothesis>=6.130",
+  "jax==0.10.1",
+  "matplotlib>=3.10,<4",
+  "mypy>=1.15",
+  "numpy>=2.0,<2.5",
+  "pre-commit>=4.2",
+  "pytest>=8.3",
+  "pytest-cov>=6.0",
+  "ruff>=0.11",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/femx"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["B", "E4", "E7", "E9", "F", "I", "RUF", "UP"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["B018"]
+
+[tool.pytest.ini_options]
+minversion = "8.3"
+testpaths = ["tests"]
+addopts = ["--strict-config", "--strict-markers", "-ra"]
+markers = [
+  "unit: deterministic test of one local unit",
+  "architecture: package and dependency boundary test",
+  "contract: reusable backend or schema conformance test",
+  "integration: test across two or more implemented components",
+  "scientific: numerical correctness evidence",
+  "slow: test not intended for the fast local gate",
+  "requires_elmer: requires a separately installed Elmer executable",
+  "requires_gmsh: requires a separately installed Gmsh executable",
+  "requires_fdtdx: requires the locked sibling FDTDX package",
+  "requires_jax: requires the optional JAX backend dependencies",
+  "requires_accelerator: requires an explicitly selected accelerator",
+  "multihost: requires a real multi-host runtime",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["femx"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 99
+exclude_also = [
+  "if TYPE_CHECKING:",
+  '\.\.\.',
+  "raise NotImplementedError",
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/femx", "scripts"]
+pretty = true
+show_error_codes = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = "scripts.*"
+disallow_untyped_defs = true
