@@ -138,6 +138,7 @@ def test_notebook_is_english_public_safe_and_scientifically_scoped() -> None:
     assert "$$" in source
     assert re.search(r"(?<!\$)\$[^$\n]+\$(?!\$)", source)
     assert not re.search(r"[가-힣]", combined)
+    assert "phoxla" not in combined.lower()
     assert not any(token in source for token in (r"\[", r"\]", r"\(", r"\)"))
 
     forbidden_patterns = (
@@ -164,3 +165,4 @@ def test_public_examples_contain_one_notebook_and_its_builder() -> None:
     builder = BUILDER_PATH.read_text(encoding="utf-8")
     assert 'OUTPUT = Path(__file__).with_name("thermally_tuned_ring_fem.ipynb")' in builder
     assert "femx.example.thermally_tuned_ring_fem/v1" in builder
+    assert "phoxla" not in builder.lower()
