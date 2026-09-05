@@ -134,8 +134,9 @@ def build_notebook() -> nbformat.NotebookNode:
             r"""
             ## 2. Setup
 
-            Run from the repository root with the `phoxla` environment. The portable default is
-            CPU; request CUDA explicitly before the kernel starts:
+            Run from the repository root in an environment containing femx's JAX and notebook
+            dependencies. The portable default is CPU; request CUDA explicitly before the kernel
+            starts:
 
             ```bash
             FEMX_NOTEBOOK_PLATFORM=cuda jupyter nbconvert --execute --to notebook --inplace \
@@ -213,7 +214,6 @@ def build_notebook() -> nbformat.NotebookNode:
 
             DEVICE = jax.devices()[0]
             RUNTIME = {
-                "environment": Path(sys.prefix).name,
                 "jax_version": jax.__version__,
                 "backend": jax.default_backend(),
                 "device_kind": str(getattr(DEVICE, "device_kind", DEVICE)),
@@ -1259,7 +1259,7 @@ def build_notebook() -> nbformat.NotebookNode:
     notebook.metadata = {
         "femx_example": DESIGN_METADATA,
         "kernelspec": {
-            "display_name": "Python (phoxla)",
+            "display_name": "Python 3 (femx)",
             "language": "python",
             "name": "python3",
         },

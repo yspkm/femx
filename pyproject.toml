@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "femx"
-version = "0.1.0.dev0"
+version = "0.1.0.dev1"
 description = "A solver-neutral finite-element harness for differentiable multiphysics"
 readme = "README.md"
 requires-python = ">=3.11,<3.15"

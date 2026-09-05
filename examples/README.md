@@ -80,17 +80,17 @@ ends with the explicit verification gates needed before a 3D thermal field can b
 The portable default is CPU:
 
 ```bash
-conda run -n phoxla env FEMX_NOTEBOOK_PLATFORM=cpu \
+FEMX_NOTEBOOK_PLATFORM=cpu uv run --with jupyter --with nbformat \
   jupyter nbconvert --execute --to notebook --inplace \
   --ExecutePreprocessor.timeout=900 \
   examples/thermally_tuned_ring_fem.ipynb
 ```
 
-For a CUDA-enabled `phoxla` environment, change the requested platform explicitly:
+If the active environment already provides a CUDA-enabled JAX installation, request CUDA
+explicitly before the kernel starts:
 
 ```bash
-conda run -n phoxla env FEMX_NOTEBOOK_PLATFORM=cuda \
-  jupyter nbconvert --execute --to notebook --inplace \
+FEMX_NOTEBOOK_PLATFORM=cuda jupyter nbconvert --execute --to notebook --inplace \
   --ExecutePreprocessor.timeout=900 \
   examples/thermally_tuned_ring_fem.ipynb
 ```
@@ -102,5 +102,5 @@ The notebook is generated deterministically. Rebuilding clears its outputs, so e
 afterward:
 
 ```bash
-conda run -n phoxla python examples/build_thermally_tuned_ring_fem.py
+uv run --with nbformat python examples/build_thermally_tuned_ring_fem.py
 ```
